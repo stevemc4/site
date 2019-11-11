@@ -1,0 +1,21 @@
+{
+  "name": "@stevemc4/site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/index.html"
+  },
+  "author": "Dhika Rizky (deka_r@outlook.com)",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^9.7.1",
+    "normalize.css": "^8.0.1",
+    "parcel-bundler": "^1.12.4",
+    "postcss-current-selector": "0.0.3",
+    "postcss-modules": "^1.4.1",
+    "postcss-nested": "^4.2.1",
+    "postcss-nested-ancestors": "^2.0.0"
+  }
+}

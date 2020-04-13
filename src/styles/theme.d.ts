@@ -6,10 +6,10 @@ declare module 'styled-components' {
       header: string;
       chinese: string;
       body: string;
-    },
+    };
     colors: {
-      background: string
-      body: string
-    }
+      background: string;
+      body: string;
+    };
   }
 }

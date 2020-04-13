@@ -37,7 +37,7 @@ const Global = createGlobalStyle`
   }
 `
 
-function App({ Component, pageProps }: {Component: NextComponentType, pageProps: any}) {
+function App ({ Component, pageProps }: {Component: NextComponentType; pageProps: unknown}): React.ReactElement {
   return (
     <>
       <Global />

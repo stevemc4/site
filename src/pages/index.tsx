@@ -1,16 +1,18 @@
 import React from 'react'
 
+import { Name, Work, WorkPlace, WorkPosition, Social } from '../styles/style'
+
 const Index = () => (
   <>
-    <h1>
+    <Name>
       Dhika Rizky
       <span className="chinese">古育琦</span>
-    </h1>
-    <div className="currentRole">
-      <span className="currentRole__position">Lead Frontend Engineer</span>
-      <span className="currentRole__place">at Kyou Hobby Shop</span>
-    </div>
-    <ul className="social">
+    </Name>
+    <Work>
+      <WorkPosition>Lead Frontend Engineer</WorkPosition>
+      <WorkPlace>at Kyou Hobby Shop</WorkPlace>
+    </Work>
+    <Social>
       <li>
         <a href="mailto:dhika@dhikarizky.me">mail</a>
       </li>
@@ -20,7 +22,7 @@ const Index = () => (
       <li>
           <a href="https://github.com/stevemc4" rel="noopener noreferrer" target="_blank">github</a>
       </li>
-    </ul>
+    </Social>
   </>
 )
 

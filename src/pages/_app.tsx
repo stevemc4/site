@@ -4,35 +4,34 @@ import { NextComponentType } from 'next'
 import { createGlobalStyle } from 'styled-components'
 
 import 'normalize.css'
-import { lightTheme, darkTheme } from '../styles/theme'
 
 const Global = createGlobalStyle`
-  html {
-    --bgColor: ${lightTheme.colors.background};
-    --bodyColor: ${lightTheme.colors.body};
-    --headerFont: ${lightTheme.fonts.header};
-    --chineseFont: ${lightTheme.fonts.chinese};
-    --bodyFont: ${lightTheme.fonts.body};
-
-    @media (prefers-color-scheme: dark) {
-    --bgColor: ${darkTheme.colors.background};
-    --bodyColor: ${darkTheme.colors.body};
-    }
-  }
 
   body {
-    background: var(--bgColor);
-    color: var(--bodyColor);
-    padding: 64px;
-    font-family: var(--bodyFont);
+    background: #ffffff;
+    color: #2d2d2d;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, \'Open Sans\', \'Helvetica Neue\', sans-serif;
+    max-width: 640px;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
+    margin: 96px auto auto 256px;
     box-sizing: border-box;
-  
-    @media (max-width: 960px) {
-      padding: 32px;
+
+    @media (max-width: 1152px) {
+      margin: 96px auto;
+    }
+
+    @media (max-width: 832px) {
+      margin: 96px;
+    }
+
+    @media (max-width: 768px) {
+      margin: 0px;
+      padding: 96px 48px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 96px 32px;
     }
   }
 `

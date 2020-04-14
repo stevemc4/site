@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Layout from '../layout/Default'
+
 import Navbar from '../components/Navbar'
 
 const Greeting = styled.p`
@@ -13,13 +15,13 @@ const Greeting = styled.p`
 `
 
 const Index = (): React.ReactElement => (
-  <>
+  <Layout>
     <Navbar />
     <Greeting>
       Hi There!<br />
       I’m Dhika, a frontend engineer and a big weeb
     </Greeting>
-  </>
+  </Layout>
 )
 
 export default Index

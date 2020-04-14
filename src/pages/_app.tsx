@@ -33,6 +33,18 @@ const Global = createGlobalStyle`
     @media (max-width: 480px) {
       padding: 96px 32px;
     }
+
+    & > #__next > * {
+      margin: 48px 0px;
+
+      &:first-child {
+        margin-top: 0px;
+      }
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
   }
 `
 

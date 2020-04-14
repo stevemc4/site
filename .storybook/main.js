@@ -6,12 +6,12 @@ module.exports = {
       test: /\.(ts|tsx)$/,
       use: [
         {
-          loader: require.resolve('ts-loader'),
-        },
-        // Optional
-        {
-          loader: require.resolve('react-docgen-typescript-loader'),
-        },
+          loader: require.resolve('babel-loader'),
+          options: {
+            presets: [['next/babel']],
+            plugins: [["styled-components", { "ssr": true }]]
+          }
+        }
       ],
     });
     config.resolve.extensions.push('.ts', '.tsx');

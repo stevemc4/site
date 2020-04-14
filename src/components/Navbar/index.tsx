@@ -3,7 +3,6 @@ import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 import Link from 'next/link'
 
 const Name = styled.h1`
-  font-family: Inter, -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, \'Open Sans\', \'Helvetica Neue\', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 48px;
@@ -12,7 +11,6 @@ const Name = styled.h1`
 `
 
 const ChineseName = styled.span`
-  font-family: Inter;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;

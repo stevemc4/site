@@ -35,7 +35,7 @@ class MyDocument extends Document {
 
   render (): React.ReactElement {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <meta charSet="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />

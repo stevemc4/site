@@ -21,6 +21,7 @@ function App ({ Component, pageProps }: {Component: NextComponentType; pageProps
       <Global />
       <Head>
         <title>Dhika Rizky</title>
+        <meta name="description" content="Hi There! I’m Dhika Rizky, a frontend engineer and a big weeb" />
       </Head>
       <Component {...pageProps} />
     </>

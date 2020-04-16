@@ -48,6 +48,7 @@ const Stuffs = ({ response }: StuffsProps): React.ReactElement => (
             subtitle={`${primarySubtitle}${secondarySubtitle !== '' ? ` · ${secondarySubtitle}` : ''}`}
             description={description}
             key={item.uid}
+            tags={item.tags}
           />
         )
       })}

@@ -5,7 +5,7 @@ const List = styled.section`
 `
 
 const Item = styled.article`
-  margin: 16px 0px;
+  margin: 24px 0px;
 
   &:first-child {
     margin-top: 0px;

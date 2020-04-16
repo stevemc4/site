@@ -15,5 +15,11 @@ export const Default = (): React.ReactElement => (
       subtitle="This is a subtitle"
       description="Lorem ipsum dolor sit amet"
     />
+    <ListItem
+      title="This is a title"
+      subtitle="This is a subtitle"
+      description="Lorem ipsum dolor sit amet"
+      tags={['Tag 1', 'Tag 2']}
+    />
   </List>
 )

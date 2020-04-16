@@ -5,7 +5,7 @@ const DefaultLayout = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 96px auto auto 256px;
+  margin: 96px auto 96px 256px;
   box-sizing: border-box;
 
   @media (max-width: 1152px) {

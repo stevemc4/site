@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Predicates } from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import ApiSearchResponse from 'prismic-javascript/d.ts/ApiSearchResponse'
+import Head from 'next/head'
 
 import Prismic from '../util/prismic'
 
@@ -27,6 +28,9 @@ interface StuffsProps {
 
 const Stuffs = ({ response }: StuffsProps): React.ReactElement => (
   <Layout>
+    <Head>
+      <title>Stuffs - Dhika Rizky</title>
+    </Head>
     <Navbar />
     <section>
       <PageTitle>

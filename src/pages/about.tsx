@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PrismicDOM from 'prismic-dom'
 import { Document } from 'prismic-javascript/d.ts/documents'
+import Head from 'next/head'
 
 import Prismic from '../util/prismic'
 
@@ -27,10 +28,15 @@ interface AboutProps {
 
 const About = ({ document }: AboutProps): React.ReactElement => (
   <Layout>
+    <Head>
+      <title>About - Dhika Rizky</title>
+    </Head>
     <Navbar />
-    <PageTitle>
-      About Me
-    </PageTitle>
+    <section>
+      <PageTitle>
+        About Me
+      </PageTitle>
+    </section>
     <Description>
       { PrismicDOM.RichText.asText(document.data.description)}
     </Description>

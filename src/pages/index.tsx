@@ -1,29 +1,27 @@
 import React from 'react'
+import styled from 'styled-components'
 
-import { Name, Work, WorkPlace, WorkPosition, Social } from '../styles/style'
+import Layout from '../layout/Default'
+
+import Navbar from '../components/Navbar'
+
+const Greeting = styled.p`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #636363;
+`
 
 const Index = (): React.ReactElement => (
-  <>
-    <Name>
-      Dhika Rizky
-      <span className="chinese">古育琦</span>
-    </Name>
-    <Work>
-      <WorkPosition>Lead Frontend Engineer</WorkPosition>
-      <WorkPlace>at Kyou Hobby Shop</WorkPlace>
-    </Work>
-    <Social>
-      <li>
-        <a href="mailto:dhika@dhikarizky.me">mail</a>
-      </li>
-      <li>
-        <a href="https://linkedin.com/in/stevemc4" rel="noopener noreferrer" target="_blank">linkedin</a>
-      </li>
-      <li>
-        <a href="https://github.com/stevemc4" rel="noopener noreferrer" target="_blank">github</a>
-      </li>
-    </Social>
-  </>
+  <Layout>
+    <Navbar />
+    <Greeting>
+      Hi There!<br />
+      I’m Dhika, a frontend engineer and a big weeb
+    </Greeting>
+  </Layout>
 )
 
 export default Index

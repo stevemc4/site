@@ -4,36 +4,14 @@ import { NextComponentType } from 'next'
 import { createGlobalStyle } from 'styled-components'
 
 import 'normalize.css'
-import { lightTheme, darkTheme } from '../styles/theme'
 
 const Global = createGlobalStyle`
-  html {
-    --bgColor: ${lightTheme.colors.background};
-    --bodyColor: ${lightTheme.colors.body};
-    --headerFont: ${lightTheme.fonts.header};
-    --chineseFont: ${lightTheme.fonts.chinese};
-    --bodyFont: ${lightTheme.fonts.body};
-
-    @media (prefers-color-scheme: dark) {
-    --bgColor: ${darkTheme.colors.background};
-    --bodyColor: ${darkTheme.colors.body};
-    }
-  }
 
   body {
-    background: var(--bgColor);
-    color: var(--bodyColor);
-    padding: 64px;
-    font-family: var(--bodyFont);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
-    box-sizing: border-box;
-  
-    @media (max-width: 960px) {
-      padding: 32px;
-    }
+    background: #ffffff;
+    color: #2d2d2d;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, \'Open Sans\', \'Helvetica Neue\', sans-serif;
+    margin: 0px;
   }
 `
 
@@ -43,6 +21,7 @@ function App ({ Component, pageProps }: {Component: NextComponentType; pageProps
       <Global />
       <Head>
         <title>Dhika Rizky</title>
+        <meta name="description" content="Hi There! I’m Dhika Rizky, a frontend engineer and a big weeb" />
       </Head>
       <Component {...pageProps} />
     </>

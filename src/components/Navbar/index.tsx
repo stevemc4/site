@@ -78,16 +78,16 @@ const Navbar = (): React.ReactElement => {
             <a>Home</a>
           </Link>
         </StyledLink>
-        <StyledLink>
+        {/* <StyledLink>
           <Link href="/notes" passHref>
             <a>Notes</a>
           </Link>
-        </StyledLink>
-        <StyledLink>
+        </StyledLink> */}
+        {/* <StyledLink>
           <Link href="/works" passHref>
             <a>Works</a>
           </Link>
-        </StyledLink>
+        </StyledLink> */}
         <StyledLink>
           <Link href="/stuffs" passHref>
             <a>Stuffs</a>

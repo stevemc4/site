@@ -28,9 +28,11 @@ interface AboutProps {
 const About = ({ document }: AboutProps): React.ReactElement => (
   <Layout>
     <Navbar />
-    <PageTitle>
-      About Me
-    </PageTitle>
+    <section>
+      <PageTitle>
+        About Me
+      </PageTitle>
+    </section>
     <Description>
       { PrismicDOM.RichText.asText(document.data.description)}
     </Description>

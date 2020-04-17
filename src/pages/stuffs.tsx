@@ -59,7 +59,7 @@ const Stuffs = ({ response }: StuffsProps): React.ReactElement => (
 export async function getStaticProps (): Promise<{props: StuffsProps}> {
   const response = await Prismic().query(
     Predicates.at('document.type', 'stuffs'),
-    { orderings: '[my.blog_post.date desc]' }
+    { orderings: '[document.first_publication_date desc]' }
   )
   return {
     props: {

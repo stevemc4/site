@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PrismicDOM from 'prismic-dom'
+import { Predicates } from 'prismic-javascript'
 import { Document } from 'prismic-javascript/d.ts/documents'
 import Head from 'next/head'
 
@@ -24,9 +25,10 @@ const Description = styled.p`
 
 interface AboutProps {
   document: Document;
+  works: Document[];
 }
 
-const About = ({ document }: AboutProps): React.ReactElement => (
+const About = ({ document, works }: AboutProps): React.ReactElement => (
   <Layout>
     <Head>
       <title>About - Dhika Rizky</title>
@@ -70,6 +72,26 @@ const About = ({ document }: AboutProps): React.ReactElement => (
         )
       })}
     </TwoColumnList>
+    {
+      works.length > 0 && (
+        <TwoColumnList title="Works">
+          {works.map((work): React.ReactElement => {
+            const title = PrismicDOM.RichText.asText(work.data.title)
+            const url = PrismicDOM.Link.url(work.data.url)
+            const desc = PrismicDOM.RichText.asText(work.data.description)
+
+            return (
+              <ListItem
+                title={title}
+                subtitle={`${url}`}
+                description={desc}
+                key={work.uid}
+              />
+            )
+          })}
+        </TwoColumnList>
+      )
+    }
   </Layout>
 )
 
@@ -77,9 +99,14 @@ export default About
 
 export async function getStaticProps (): Promise<{ props: AboutProps }> {
   const aboutPage = await Prismic().getSingle('about', {})
+  const works = await Prismic().query(
+    Predicates.at('document.type', 'work'),
+    { orderings: '[document.first_publication_date desc]' }
+  )
   return {
     props: {
-      document: aboutPage
+      document: aboutPage,
+      works: works.results
     }
   }
 }

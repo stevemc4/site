@@ -83,11 +83,11 @@ const Navbar = (): React.ReactElement => {
             <a>Notes</a>
           </Link>
         </StyledLink> */}
-        {/* <StyledLink>
+        <StyledLink>
           <Link href="/works" passHref>
             <a>Works</a>
           </Link>
-        </StyledLink> */}
+        </StyledLink>
         <StyledLink>
           <Link href="/stuffs" passHref>
             <a>Stuffs</a>

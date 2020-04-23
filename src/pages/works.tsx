@@ -31,7 +31,7 @@ const Works = ({ response }: WorksProps): React.ReactElement => (
     <Head>
       <title>Works - Dhika Rizky</title>
     </Head>
-    <Navbar />
+    <Navbar currentPage="WORKS" />
     <section>
       <PageTitle>Works</PageTitle>
     </section>

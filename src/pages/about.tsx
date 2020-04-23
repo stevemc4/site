@@ -33,7 +33,7 @@ const About = ({ document, works }: AboutProps): React.ReactElement => (
     <Head>
       <title>About - Dhika Rizky</title>
     </Head>
-    <Navbar />
+    <Navbar currentPage="ABOUT" />
     <section>
       <PageTitle>
         About Me

@@ -16,7 +16,7 @@ const Greeting = styled.p`
 
 const Index = (): React.ReactElement => (
   <Layout>
-    <Navbar />
+    <Navbar currentPage="HOME" />
     <Greeting>
       Hi There!<br />
       I’m Dhika, a frontend engineer and a big weeb

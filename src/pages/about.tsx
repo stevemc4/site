@@ -40,7 +40,7 @@ const About = ({ document, works }: AboutProps): React.ReactElement => (
       </PageTitle>
     </section>
     <Description>
-      { PrismicDOM.RichText.asText(document.data.description)}
+      { PrismicDOM.RichText.asText(document.data.description) }
     </Description>
     <TwoColumnList title="Education">
       {document.data.education.map((edu): React.ReactElement => {

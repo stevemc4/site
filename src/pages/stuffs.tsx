@@ -31,7 +31,7 @@ const Stuffs = ({ response }: StuffsProps): React.ReactElement => (
     <Head>
       <title>Stuffs - Dhika Rizky</title>
     </Head>
-    <Navbar />
+    <Navbar currentPage="STUFFS" />
     <section>
       <PageTitle>
         Stuffs

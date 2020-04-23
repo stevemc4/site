@@ -67,13 +67,17 @@ const StyledLink = styled.li<StyledLinkProps>`
   `}
 `
 
-const Navbar = (): React.ReactElement => {
+interface NavbarProps {
+  currentPage?: 'HOME' | 'NOTES' | 'WORKS' | 'STUFFS' | 'ABOUT';
+}
+
+const Navbar = ({ currentPage }: NavbarProps): React.ReactElement => {
   return (
     <nav>
       <Name>Dhika Rizky</Name>
       <ChineseName>古育琦</ChineseName>
       <Links>
-        <StyledLink>
+        <StyledLink active={currentPage === 'HOME'}>
           <Link href="/" passHref>
             <a>Home</a>
           </Link>
@@ -83,17 +87,17 @@ const Navbar = (): React.ReactElement => {
             <a>Notes</a>
           </Link>
         </StyledLink> */}
-        {/* <StyledLink>
+        <StyledLink active={currentPage === 'WORKS'}>
           <Link href="/works" passHref>
             <a>Works</a>
           </Link>
-        </StyledLink> */}
-        <StyledLink>
+        </StyledLink>
+        <StyledLink active={currentPage === 'STUFFS'}>
           <Link href="/stuffs" passHref>
             <a>Stuffs</a>
           </Link>
         </StyledLink>
-        <StyledLink>
+        <StyledLink active={currentPage === 'ABOUT'}>
           <Link href="/about" passHref>
             <a>About</a>
           </Link>

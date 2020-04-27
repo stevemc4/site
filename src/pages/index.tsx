@@ -12,6 +12,10 @@ const Greeting = styled.p`
   line-height: 22px;
 
   color: #636363;
+
+  a {
+    color: inherit;
+  }
 `
 
 const Index = (): React.ReactElement => (
@@ -19,7 +23,9 @@ const Index = (): React.ReactElement => (
     <Navbar currentPage="HOME" />
     <Greeting>
       Hi There!<br />
-      I’m Dhika, a frontend engineer and a big weeb
+      I’m Dhika, a frontend engineer and a big weeb<br/>
+      <br />
+      I also do things in <a href="https://github.com/ShioriLabs" target="_blank" rel="noopener noreferrer">Shiori Labs</a>, go check it out!
     </Greeting>
   </Layout>
 )

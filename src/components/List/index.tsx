@@ -1,10 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 const List = styled.section`
 `
 
-const Item = styled.article`
+const Item = styled.article<{clickable?: boolean}>`
   margin: 24px 0px;
 
   &:first-child {
@@ -14,6 +14,10 @@ const Item = styled.article`
   &:last-child {
     margin-bottom: 0px;
   }
+
+  ${(props): FlattenSimpleInterpolation => props.clickable && css`
+    cursor: pointer;
+  `}
 `
 
 const Title = styled.h1`
@@ -85,18 +89,27 @@ const Tag = styled.li`
   }
 `
 
+// const SubtitleLink = styled.a()
+
 interface ListItemProps {
   title: string;
   subtitle?: string;
   description?: string;
   tags?: string[];
+  action?: string;
 }
 
-const ListItem = ({ title, subtitle, description, tags }: ListItemProps): React.ReactElement => {
+const ListItem = ({ title, subtitle, description, tags, action }: ListItemProps): React.ReactElement => {
+  const openPage = (): void => {
+    if (action) {
+      window.open(action, '_blank')
+    }
+  }
   return (
-    <Item>
+    <Item onClick={openPage} clickable={!!action}>
       <Title>{title}</Title>
-      {(subtitle && <Subtitle>{subtitle}</Subtitle>)}
+      {(subtitle && (!action || action !== subtitle) && <Subtitle>{subtitle}</Subtitle>)}
+      {(subtitle && action && action === subtitle && <Subtitle as="a" href={action} target="_blank" rel="noreferrer noopener">{subtitle}</Subtitle>)}
       {(description && <Description>{description}</Description>)}
       {(tags && tags.length > 0 && <TagContainer>
         {tags.map(tag => <Tag key={`${title}_${tag}`}>{tag}</Tag>)}

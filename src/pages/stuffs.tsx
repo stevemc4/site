@@ -46,6 +46,7 @@ const Stuffs = ({ response }: StuffsProps): React.ReactElement => (
         const primarySubtitle = PrismicDOM.RichText.asText(item.data.primarysubtitle)
         const secondarySubtitle = PrismicDOM.RichText.asText(item.data.secondarysubtitle)
         const description = PrismicDOM.RichText.asText(item.data.comment)
+        const action = PrismicDOM.Link.url(item.data.action)
         return (
           <ListItem
             title={title}
@@ -53,6 +54,7 @@ const Stuffs = ({ response }: StuffsProps): React.ReactElement => (
             description={description}
             key={item.uid}
             tags={item.tags}
+            action={action}
           />
         )
       })}

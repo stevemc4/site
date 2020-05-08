@@ -46,6 +46,7 @@ const Works = ({ response }: WorksProps): React.ReactElement => (
             subtitle={url}
             description={desc}
             key={item.uid}
+            action={url}
           />
         )
       })}

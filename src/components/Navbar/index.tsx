@@ -10,13 +10,13 @@ const Name = styled.h1`
   margin: 0px;
 `
 
-const ChineseName = styled.span`
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  display: block;
-  color: #636363;
-`
+// const ChineseName = styled.span`
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 24px;
+//   display: block;
+//   color: #636363;
+// `
 
 const Links = styled.ul`
   list-style-type: none;
@@ -75,7 +75,7 @@ const Navbar = ({ currentPage }: NavbarProps): React.ReactElement => {
   return (
     <nav>
       <Name>Dhika Rizky</Name>
-      <ChineseName>古育琦</ChineseName>
+      {/* <ChineseName>古育琦</ChineseName> */}
       <Links>
         <StyledLink active={currentPage === 'HOME'}>
           <Link href="/" passHref>

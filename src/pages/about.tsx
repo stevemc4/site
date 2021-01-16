@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import PrismicDOM from 'prismic-dom'
-import { Predicates } from 'prismic-javascript'
-import { Document } from 'prismic-javascript/d.ts/documents'
+import P from 'prismic-javascript'
+import { Document } from 'prismic-javascript/types/documents'
 import Head from 'next/head'
 
 import Prismic from '../util/prismic'
@@ -100,7 +100,7 @@ export default About
 export async function getStaticProps (): Promise<{ props: AboutProps }> {
   const aboutPage = await Prismic().getSingle('about', {})
   const works = await Prismic().query(
-    Predicates.at('document.type', 'work'),
+    P.Predicates.at('document.type', 'work'),
     { orderings: '[document.first_publication_date desc]' }
   )
   return {

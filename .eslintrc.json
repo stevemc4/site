@@ -1,10 +1,12 @@
-module.exports = {
+{
     "env": {
         "browser": true,
-        "es6": true
+        "es2021": true,
+        "node": true
     },
     "extends": [
         "plugin:react/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "standard"
     ],
@@ -14,10 +16,7 @@ module.exports = {
     },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
+        "ecmaVersion": 12,
         "sourceType": "module"
     },
     "plugins": [
@@ -25,5 +24,12 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
-    }
-};
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "error"
+    },
+    "settings": {
+        "react": {
+          "version": "detect"
+        }
+      }
+}

@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Predicates } from 'prismic-javascript'
+import P from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
-import ApiSearchResponse from 'prismic-javascript/d.ts/ApiSearchResponse'
+import Predicates from 'prismic-javascript/types/Predicates'
+import ApiSearchResponse from 'prismic-javascript/types/ApiSearchResponse'
 import Head from 'next/head'
 
 import Prismic from '../util/prismic'
@@ -66,7 +67,7 @@ export default Works
 
 export async function getStaticProps (): Promise<{ props: WorksProps }> {
   const data = await Prismic().query(
-    Predicates.at('document.type', 'work'),
+    P.Predicates.at('document.type', 'work'),
     { orderings: '[document.first_publication_date desc]' }
   )
   return {

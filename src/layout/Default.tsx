@@ -25,6 +25,11 @@ const DefaultLayout = styled.div`
     padding: 96px 32px;
   }
 
+  @media print {
+    margin: 0px;
+    padding: 16px;
+  }
+
   & > * {
     margin: 24px 0px;
 

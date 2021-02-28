@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import P from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
-import Predicates from 'prismic-javascript/types/Predicates'
 import ApiSearchResponse from 'prismic-javascript/types/ApiSearchResponse'
 import Head from 'next/head'
 

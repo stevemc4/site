@@ -24,6 +24,10 @@ const Links = styled.ul`
   margin: 0px;
   margin-top: 16px;
   display: flex;
+
+  @media print {
+    display: none;
+  }
 `
 
 interface StyledLinkProps {

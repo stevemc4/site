@@ -23,6 +23,11 @@ const Description = styled.p`
   color: #636363;
 `
 
+const EmailText = styled.p`
+  color: #2d2d2d;
+  font-size: 20px;
+`
+
 interface AboutProps {
   document: Document;
   works: Document[];
@@ -42,6 +47,14 @@ const About = ({ document, works }: AboutProps): React.ReactElement => (
     <Description>
       { PrismicDOM.RichText.asText(document.data.description) }
     </Description>
+    <section>
+      <PageTitle>
+        Email
+      </PageTitle>
+      <EmailText>
+        { PrismicDOM.RichText.asText(document.data.email) }
+      </EmailText>
+    </section>
     <TwoColumnList title="Education">
       {document.data.education.map((edu): React.ReactElement => {
         const name = PrismicDOM.RichText.asText(edu.name)
@@ -86,6 +99,26 @@ const About = ({ document, works }: AboutProps): React.ReactElement => (
                 subtitle={`${url}`}
                 description={desc}
                 key={work.uid}
+                action={url}
+              />
+            )
+          })}
+        </TwoColumnList>
+      )
+    }
+    {
+      document.data.contacts.length > 0 && (
+        <TwoColumnList title="Contacts">
+          {document.data.contacts.map((contact): React.ReactElement => {
+            const title = PrismicDOM.RichText.asText(contact.name)
+            const url = PrismicDOM.Link.url(contact.link)
+
+            return (
+              <ListItem
+                title={title}
+                subtitle={`${url}`}
+                key={contact.uid}
+                action={url}
               />
             )
           })}

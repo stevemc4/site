@@ -100,13 +100,8 @@ interface ListItemProps {
 }
 
 const ListItem = ({ title, subtitle, description, tags, action }: ListItemProps): React.ReactElement => {
-  const openPage = (): void => {
-    if (action) {
-      window.open(action, '_blank')
-    }
-  }
   return (
-    <Item onClick={openPage} clickable={!!action}>
+    <Item>
       <Title>{title}</Title>
       {(subtitle && (!action || action !== subtitle) && <Subtitle>{subtitle}</Subtitle>)}
       {(subtitle && action && action === subtitle && <Subtitle as="a" href={action} target="_blank" rel="noreferrer noopener">{subtitle}</Subtitle>)}

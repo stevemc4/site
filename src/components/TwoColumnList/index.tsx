@@ -14,6 +14,10 @@ const Title = styled.h2`
   @media (max-width: 768px) {
     margin-bottom: 8px;
   }
+
+  @media (prefers-color-scheme: dark) {
+    color: #c4c4c4;
+  }
 `
 
 const Container = styled.div`

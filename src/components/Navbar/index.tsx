@@ -8,6 +8,10 @@ const Name = styled.h1`
   font-size: 48px;
   color: #2d2d2d;
   margin: 0px;
+
+  @media (prefers-color-scheme: dark) {
+    color: #ebebeb;
+  }
 `
 
 // const ChineseName = styled.span`
@@ -61,12 +65,24 @@ const StyledLink = styled.li<StyledLinkProps>`
     &:hover {
       color: #2d2d2d;
     }
+
+    @media (prefers-color-scheme: dark) {
+      color: #c4c4c4;
+  
+      &:hover {
+        color: #ebebeb;   
+      }
+    }
   }
 
   ${(props): FlattenSimpleInterpolation => props.active && css`
     a {
       color: #2d2d2d;
       font-weight: 500;
+
+      @media (prefers-color-scheme: dark) {
+        color: #ebebeb;
+      }
     }
   `}
 `

@@ -13,6 +13,10 @@ const Greeting = styled.p`
 
   color: #636363;
 
+  @media (prefers-color-scheme: dark) {
+    color: #c4c4c4;
+  }
+
   a {
     color: inherit;
   }

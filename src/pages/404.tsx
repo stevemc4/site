@@ -12,6 +12,10 @@ const Error404 = styled.h2`
   font-weight: 900;
   font-style: normal;
   margin: 0px;
+
+  @media (prefers-color-scheme: dark) {
+    color: #ebebeb;
+  }
 `
 
 const Description = styled.p`
@@ -22,6 +26,10 @@ const Description = styled.p`
   margin: 0px;
 
   color: #636363;
+
+  @media (prefers-color-scheme: dark) {
+    color: #c4c4c4;
+  }
 `
 
 const HomeLink = styled.a`
@@ -30,6 +38,14 @@ const HomeLink = styled.a`
 
   &:hover {
     color: #2d2d2d;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: #c4c4c4;
+
+    &:hover {
+      color: #ebebeb;
+    }
   }
 `
 

@@ -20,9 +20,18 @@ interface WorksProps {
 const GithubLink = styled.a`
   color: #636363;
   text-decoration: none;
+  
 
   &:hover {
     color: #2d2d2d;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: #c4c4c4;
+
+    &:hover {
+      color: #ebebeb;
+    }
   }
 `
 

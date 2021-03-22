@@ -12,6 +12,11 @@ const Global = createGlobalStyle`
     color: #2d2d2d;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, \'Open Sans\', \'Helvetica Neue\', sans-serif;
     margin: 0px;
+
+    @media (prefers-color-scheme: dark) {
+      background: #2d2d2d;
+      color: #ebebeb;
+    }
   }
 `
 

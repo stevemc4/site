@@ -1,7 +1,7 @@
 {
   "name": "@stevemc4/site",
   "version": "1.0.0",
-  "description": "",
+  "description": "This site can be accessed in https://dhikarizky.me",
   "main": "app.js",
   "scripts": {
     "test": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
@@ -45,5 +45,13 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-standard": "^4.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevemc4/site.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stevemc4/site/issues"
+  },
+  "homepage": "https://github.com/stevemc4/site#readme"
 }

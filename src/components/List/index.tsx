@@ -24,8 +24,12 @@ const Title = styled.h1`
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  color: #2D2D2D;
+  color: #2d2d2d;
   margin: 0px;
+
+  @media (prefers-color-scheme: dark) {
+    color: #ebebeb;
+  }
 `
 
 const Subtitle = styled.h2`
@@ -35,7 +39,11 @@ const Subtitle = styled.h2`
   line-height: 19px;
   color: #636363;
   margin: 4px 0px;
-  margin-top: 0px;
+  margin-top: 2px;
+
+  @media (prefers-color-scheme: dark) {
+    color: #c4c4c4;
+  }
 
   &:last-child {
     margin-bottom: 0px;
@@ -49,6 +57,10 @@ const Description = styled.p`
   line-height: 19px;
   color: #636363;
   margin: 8px 0px;
+
+  @media (prefers-color-scheme: dark) {
+    color: #c4c4c4;
+  }
 
   &:last-child {
     margin-bottom: 0px;
@@ -79,6 +91,11 @@ const Tag = styled.li`
   border-radius: 4px;
   text-transform: uppercase;
   margin: 0px 4px;
+
+  @media (prefers-color-scheme: dark) {
+    color: #2d2d2d;
+    background: #ebebeb;
+  }
 
   &:first-child {
     margin-left: 0px;

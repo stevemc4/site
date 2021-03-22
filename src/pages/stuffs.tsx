@@ -20,6 +20,10 @@ const Subtitle = styled.span`
 
   color: #636363;
   display: block;
+
+  @media (prefers-color-scheme: dark) {
+    color: #c4c4c4;
+  }
 `
 
 interface StuffsProps {

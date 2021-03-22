@@ -21,11 +21,19 @@ const Description = styled.p`
   line-height: 22px;
 
   color: #636363;
+
+  @media (prefers-color-scheme: dark) {
+    color: #c4c4c4;
+  }
 `
 
 const EmailText = styled.p`
   color: #2d2d2d;
   font-size: 20px;
+
+  @media (prefers-color-scheme: dark) {
+    color: #ebebeb;
+  }
 `
 
 interface AboutProps {

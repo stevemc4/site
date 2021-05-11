@@ -7,9 +7,7 @@
     "test": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "start": "next start"
   },
   "author": "Dhika Rizky (deka_r@outlook.com)",
   "license": "MIT",
@@ -28,11 +26,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
-    "@storybook/addon-actions": "^6.1.21",
-    "@storybook/addon-docs": "^6.1.21",
-    "@storybook/addon-links": "^6.1.21",
-    "@storybook/addons": "^6.1.21",
-    "@storybook/react": "^6.1.21",
     "@types/react": "^17.0.2",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
@@ -44,8 +37,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "postcss": "^8.2.13"
+    "eslint-plugin-standard": "^4.0.1"
   },
   "repository": {
     "type": "git",

@@ -57,6 +57,7 @@ const Description = styled.p`
   line-height: 19px;
   color: #636363;
   margin: 8px 0px;
+  white-space: pre-wrap;
 
   @media (prefers-color-scheme: dark) {
     color: #c4c4c4;

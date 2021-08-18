@@ -124,8 +124,8 @@ const About = ({ document, works }: AboutProps): React.ReactElement => (
             return (
               <ListItem
                 title={title}
-                subtitle={`${url}`}
-                key={contact.uid}
+                subtitle={url}
+                key={`Contacts - ${title} (${url})`}
                 action={url}
               />
             )

@@ -78,7 +78,7 @@ const About = ({ document, works }: AboutProps): React.ReactElement => (
         )
       })}
     </TwoColumnList>
-    <TwoColumnList title="Working Experience">
+    <TwoColumnList title="Work Experience">
       {document.data.experience.map((exp): React.ReactElement => {
         const name = PrismicDOM.RichText.asText(exp.company)
         const role = PrismicDOM.RichText.asText(exp.role)

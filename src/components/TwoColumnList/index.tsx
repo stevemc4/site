@@ -24,8 +24,12 @@ const Container = styled.div`
   display: flex;
   width: 100%;
 
-  ${Title}, ${List} {
-    width: 50%;
+  ${Title} {
+    width: 40%;
+  }
+
+  ${List} {
+    width: 60%;
   }
 
   @media (max-width: 768px) {

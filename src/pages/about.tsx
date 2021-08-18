@@ -73,7 +73,7 @@ const About = ({ document, works }: AboutProps): React.ReactElement => (
           <ListItem
             title={name}
             subtitle={`${major} · ${year}`}
-            key={name + ` [${year}]`}
+            key={`${name} [${year}]`}
           />
         )
       })}
@@ -88,7 +88,7 @@ const About = ({ document, works }: AboutProps): React.ReactElement => (
           <ListItem
             title={name}
             subtitle={`${role} · ${year}`}
-            key={name + ` [${year}]`}
+            key={`${name} [${year}]`}
           />
         )
       })}

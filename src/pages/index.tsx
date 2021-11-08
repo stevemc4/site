@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Layout from '../layout/Default'
-
 import Navbar from '../components/Navbar'
 
 const Greeting = styled.p`
@@ -23,7 +21,7 @@ const Greeting = styled.p`
 `
 
 const Index = (): React.ReactElement => (
-  <Layout>
+  <>
     <Navbar currentPage="HOME" />
     <Greeting>
       Hi There!<br />
@@ -31,7 +29,7 @@ const Index = (): React.ReactElement => (
       <br />
       I also do things in <a href="https://github.com/ShioriLabs" target="_blank" rel="noopener noreferrer">Shiori Labs</a>, go check it out!
     </Greeting>
-  </Layout>
+  </>
 )
 
 export default Index

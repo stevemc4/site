@@ -3,6 +3,8 @@ import Head from 'next/head'
 import { NextComponentType } from 'next'
 import { createGlobalStyle } from 'styled-components'
 
+import Layout from '../layout/Default'
+
 import 'normalize.css'
 
 const Global = createGlobalStyle`
@@ -36,7 +38,9 @@ function App ({ Component, pageProps }: {Component: NextComponentType; pageProps
         <title>Dhika Rizky</title>
         <meta name="description" content="Hi There! I’m Dhika Rizky, a frontend engineer and a big weeb" />
       </Head>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }

@@ -7,8 +7,6 @@ import Head from 'next/head'
 
 import Prismic from '../util/prismic'
 
-import Layout from '../layout/Default'
-
 import Navbar from '../components/Navbar'
 import PageTitle from '../components/PageTitle'
 import List, { ListItem } from '../components/List'
@@ -36,7 +34,7 @@ const GithubLink = styled.a`
 `
 
 const Works = ({ response }: WorksProps): React.ReactElement => (
-  <Layout>
+  <>
     <Head>
       <title>Works - Dhika Rizky</title>
     </Head>
@@ -68,7 +66,7 @@ const Works = ({ response }: WorksProps): React.ReactElement => (
         See More on GitHub
       </GithubLink>
     </section>
-  </Layout>
+  </>
 )
 
 export default Works

@@ -7,8 +7,6 @@ import Head from 'next/head'
 
 import Prismic from '../util/prismic'
 
-import Layout from '../layout/Default'
-
 import Navbar from '../components/Navbar'
 import PageTitle from '../components/PageTitle'
 import List, { ListItem } from '../components/List'
@@ -31,7 +29,7 @@ interface StuffsProps {
 }
 
 const Stuffs = ({ response }: StuffsProps): React.ReactElement => (
-  <Layout>
+  <>
     <Head>
       <title>Stuffs - Dhika Rizky</title>
     </Head>
@@ -63,7 +61,7 @@ const Stuffs = ({ response }: StuffsProps): React.ReactElement => (
         )
       })}
     </List>
-  </Layout>
+  </>
 )
 
 export async function getStaticProps (): Promise<{props: StuffsProps}> {

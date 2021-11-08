@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 
-import Layout from '../layout/Default'
-
 import Navbar from '../components/Navbar'
 
 const Error404 = styled.h2`
@@ -50,7 +48,7 @@ const HomeLink = styled.a`
 `
 
 const NotFound = (): React.ReactElement => (
-  <Layout>
+  <>
     <Navbar />
     <section>
       <Error404>404 Not Found</Error404>
@@ -65,7 +63,7 @@ const NotFound = (): React.ReactElement => (
         </HomeLink>
       </Link>
     </section>
-  </Layout>
+  </>
 )
 
 export default NotFound

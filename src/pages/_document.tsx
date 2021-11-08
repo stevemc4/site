@@ -1,7 +1,7 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import { RenderPageResult } from 'next/dist/next-server/lib/utils'
+import { RenderPageResult } from 'next/dist/shared/lib/utils'
 
 interface DocumentProps extends DocumentInitialProps {
   styles: React.ReactElement;

@@ -7,8 +7,6 @@ import Head from 'next/head'
 
 import Prismic from '../util/prismic'
 
-import Layout from '../layout/Default'
-
 import Navbar from '../components/Navbar'
 import PageTitle from '../components/PageTitle'
 import TwoColumnList from '../components/TwoColumnList'
@@ -42,7 +40,7 @@ interface AboutProps {
 }
 
 const About = ({ document, works }: AboutProps): React.ReactElement => (
-  <Layout>
+  <>
     <Head>
       <title>About - Dhika Rizky</title>
     </Head>
@@ -133,7 +131,7 @@ const About = ({ document, works }: AboutProps): React.ReactElement => (
         </TwoColumnList>
       )
     }
-  </Layout>
+  </>
 )
 
 export default About

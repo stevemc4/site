@@ -17,6 +17,7 @@ const works = await Prismic().query(
   { orderings: '[document.first_publication_date desc]' }
 )
 ---
+
 <Layout title="About">
   <Navbar currentPage="ABOUT" />
   <section>
@@ -40,53 +41,53 @@ const works = await Prismic().query(
     })}
   </TwoColumnList>
   <TwoColumnList title="Work Experience">
-      {pageData.data.experience.map((exp) => {
-        const name = PrismicDOM.RichText.asText(exp.company)
-        const role = PrismicDOM.RichText.asText(exp.role)
-        const year = PrismicDOM.RichText.asText(exp.year)
+    {pageData.data.experience.map((exp) => {
+      const name = PrismicDOM.RichText.asText(exp.company)
+      const role = PrismicDOM.RichText.asText(exp.role)
+      const year = PrismicDOM.RichText.asText(exp.year)
+
+      return (
+        <ListItem
+          title={name}
+          subtitle={`${role} · ${year}`}
+        />
+      )
+    })}
+  </TwoColumnList>
+  {works.results && (
+    <TwoColumnList title="Works">
+      {works.results.map((work) => {
+        const title = PrismicDOM.RichText.asText(work.data.title)
+        const url = PrismicDOM.Link.url(work.data.url)
+        const desc = PrismicDOM.RichText.asText(work.data.description)
 
         return (
           <ListItem
-            title={name}
-            subtitle={`${role} · ${year}`}
+            title={title}
+            subtitle={`${url}`}
+            description={desc}
+            action={url}
           />
         )
       })}
     </TwoColumnList>
-    {works.results && (
-      <TwoColumnList title="Works">
-        {works.results.map((work) => {
-          const title = PrismicDOM.RichText.asText(work.data.title)
-          const url = PrismicDOM.Link.url(work.data.url)
-          const desc = PrismicDOM.RichText.asText(work.data.description)
+  )}
+  {pageData.data.contacts && (
+    <TwoColumnList title="Contacts">
+      {pageData.data.contacts.map((contact) => {
+        const title = PrismicDOM.RichText.asText(contact.name)
+        const url = PrismicDOM.Link.url(contact.link)
 
-          return (
-            <ListItem
-              title={title}
-              subtitle={`${url}`}
-              description={desc}
-              action={url}
-            />
-          )
-        })}
-      </TwoColumnList>
-    )}
-    {pageData.data.contacts.length > 0 && (
-      <TwoColumnList title="Contacts">
-        {pageData.data.contacts.map((contact) => {
-          const title = PrismicDOM.RichText.asText(contact.name)
-          const url = PrismicDOM.Link.url(contact.link)
-
-          return (
-            <ListItem
-              title={title}
-              subtitle={url}
-              action={url}
-            />
-          )
-        })}
-      </TwoColumnList>
-    )}
+        return (
+          <ListItem
+            title={title}
+            subtitle={url}
+            action={url}
+          />
+        )
+      })}
+    </TwoColumnList>
+  )}
 </Layout>
 
 <style lang="scss">

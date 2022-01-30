@@ -1,0 +1,65 @@
+---
+import Layout from '../layout/Default.astro'
+
+import Navbar from '../components/Navbar/index.astro'
+---
+
+<Layout>
+  <Navbar />
+  <section>
+    <h2 class="error-404">404 Not Found</h2>
+    <p class="description">
+      This page doesn&apos;t exist.
+    </p>
+  </section>
+  <section>
+    <a href="/" class="go-to-home">
+        Back to Home
+    </a>
+  </section>
+</Layout>
+
+<style lang="scss">
+  .error-404 {
+    font-size: 48px;
+    color: #2d2d2d;
+    font-weight: 900;
+    font-style: normal;
+    margin: 0px;
+
+    @media (prefers-color-scheme: dark) {
+      color: #ebebeb;
+    }
+  }
+
+  .description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 22px;
+    margin: 0px;
+
+    color: #636363;
+
+    @media (prefers-color-scheme: dark) {
+      color: #c4c4c4;
+    }
+  }
+
+  .go-to-home {
+    color: #636363;
+    text-decoration: none;
+
+    &:hover {
+      color: #2d2d2d;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: #c4c4c4;
+
+      &:hover {
+        color: #ebebeb;
+      }
+    } 
+  }
+</style>

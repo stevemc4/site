@@ -5,9 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "author": "Dhika Rizky (deka_r@outlook.com)",
   "license": "MIT",
@@ -15,6 +15,8 @@
     "@types/node": "^13.11.1",
     "@types/prismic-dom": "^2.1.1",
     "@types/styled-components": "^5.0.1",
+    "astro": "^0.22.20",
+    "modern-normalize": "^1.1.0",
     "next": "^12.0.3",
     "normalize.css": "^8.0.1",
     "prismic-dom": "^2.2.4",

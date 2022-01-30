@@ -1,0 +1,61 @@
+---
+import P from 'prismic-javascript'
+import PrismicDOM from 'prismic-dom'
+
+import Prismic from '../util/prismic'
+
+import Layout from '../layout/Default.astro'
+
+import List from '../components/List/index.astro'
+import ListItem from '../components/List/ListItem.astro'
+import Navbar from '../components/Navbar/index.astro'
+import PageTitle from '../components/PageTitle/index.astro'
+
+const data = await Prismic().query(
+  P.Predicates.at('document.type', 'stuffs'),
+  { orderings: '[document.first_publication_date desc]' }
+)
+---
+<Layout title="Stuffs">
+  <Navbar currentPage="STUFFS" />
+  <section>
+    <PageTitle>Stuffs</PageTitle>
+    <h3 class="subtitle">
+      a.k.a Things I love, recommend, or just something I want to share
+    </h3>
+  </section>
+  <List>
+    {data.results.map(item => {
+      const title = PrismicDOM.RichText.asText(item.data.title)
+      const primarySubtitle = PrismicDOM.RichText.asText(item.data.primarysubtitle)
+      const secondarySubtitle = PrismicDOM.RichText.asText(item.data.secondarysubtitle)
+      const description = PrismicDOM.RichText.asText(item.data.comment)
+      const action = PrismicDOM.Link.url(item.data.action)
+      return (
+        <ListItem
+          title={title}
+          subtitle={`${primarySubtitle}${secondarySubtitle && ` · ${secondarySubtitle}`}`}
+          description={description}
+          tags={item.tags}
+          action={action}
+        />
+      )
+    })}
+  </List>
+</Layout>
+
+<style lang="scss">
+  .subtitle {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0px;
+
+    color: #636363;
+    display: block;
+
+    @media (prefers-color-scheme: dark) {
+      color: #c4c4c4;
+    }
+  }
+</style>

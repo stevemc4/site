@@ -22,20 +22,20 @@ const data = await Prismic().query(
     <PageTitle>Works</PageTitle>
   </section>
   <List>
-  { data.results.map(item => {
-    const title = PrismicDOM.RichText.asText(item.data.title)
-    const url = PrismicDOM.Link.url(item.data.url)
-    const desc = PrismicDOM.RichText.asText(item.data.description)
-    return (
-      <ListItem
-        title={title}
-        subtitle={url}
-        description={desc}
-        action={url}
-      />
-    )
-  })}
-</List>
+    {data.results.map(item => {
+      const title = PrismicDOM.RichText.asText(item.data.title)
+      const url = PrismicDOM.Link.url(item.data.url)
+      const desc = PrismicDOM.RichText.asText(item.data.description)
+      return (
+        <ListItem
+          title={title}
+          subtitle={url}
+          description={desc}
+          action={url}
+        />
+      )
+    })}
+  </List>
   <section>
     <a href="https://github.com/stevemc4" target="_blank" class="github">
       See More on GitHub

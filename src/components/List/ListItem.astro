@@ -15,9 +15,9 @@ const { title, subtitle, description, tags, action } = Astro.props
   {(subtitle && (!action || action !== subtitle) && <h2 class="subtitle">{subtitle}</h2>)}
   {(subtitle && action && action === subtitle && <a class="subtitle" href={action} target="_blank" rel="noreferrer noopener">{subtitle}</a>)}
   {(description && <p class="description">{description}</p>)}
-  <!-- {(tags && tags.length > 0 && <TagContainer>
-    {tags.map(tag => <Tag key={`${title}_${tag}`}>{tag}</Tag>)}
-  </TagContainer>)} -->
+  {(tags && <ul class="tags">
+    {tags.map(tag => <li class="tag">{tag}</li>)}
+  </ul>)}   
 </article>
 
 <style lang="scss">
@@ -66,6 +66,35 @@ const { title, subtitle, description, tags, action } = Astro.props
 
       &:last-child {
         margin-bottom: 0px;
+      }
+    }
+
+    .tags {
+      list-style-type: none;
+      padding: 0px;
+      margin: 8px 0px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+
+      display: flex;
+      gap: 8px;
+    }
+
+    .tag {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 10px;
+      line-height: 12px;
+      color: #FFFFFF;
+      padding: 4px;
+      background: #2D2D2D;
+      border-radius: 4px;
+      text-transform: uppercase;
+
+      @media (prefers-color-scheme: dark) {
+        color: #2d2d2d;
+        background: #ebebeb;
       }
     }
   }

@@ -3,7 +3,7 @@ export interface Props {
   currentPage?: 'HOME' | 'NOTES' | 'WORKS' | 'STUFFS' | 'ABOUT';
 }
 
-const { currentPage = 'HOME' }: Props = Astro.props
+const { currentPage }: Props = Astro.props
 ---
 
 <nav>

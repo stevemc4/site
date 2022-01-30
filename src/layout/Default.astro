@@ -1,0 +1,43 @@
+---
+import 'modern-normalize'
+
+import Container from '../components/Container/index.astro'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <title>Dhika Rizky</title>
+    <meta name="description" content="Hi There! I’m Dhika Rizky, a frontend engineer and a big weeb" />
+    <style global>
+      body {
+        background: #ffffff;
+        color: #2d2d2d;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #2d2d2d;
+          color: #ebebeb;
+        }
+      }
+
+      @supports (font-variation-settings: normal) {
+        body {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Container>
+      <slot />
+    </Container>
+  </body>
+</html>

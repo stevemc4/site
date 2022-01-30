@@ -1,0 +1,92 @@
+---
+export interface Props {
+  currentPage?: 'HOME' | 'NOTES' | 'WORKS' | 'STUFFS' | 'ABOUT';
+}
+
+const { currentPage = 'HOME' }: Props = Astro.props
+---
+
+<nav>
+  <h1 class="name">Dhika Rizky</h1>
+  <ul class="links">
+    <li data-active={currentPage === 'HOME'}>
+      <a href="/">Home</a>
+    </li>
+    <li data-active={currentPage === 'WORKS'}>
+      <a href="/works">Works</a>
+    </li>
+    <li data-active={currentPage === 'STUFFS'}>
+      <a href="/works">Stuffs</a>
+    </li>
+    <li data-active={currentPage === 'ABOUT'}>
+      <a href="/works">About</a>
+    </li>
+  </ul>
+</nav>
+
+<style lang="scss">
+  .name {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    color: #2d2d2d;
+    margin: 0px;
+
+    @media (prefers-color-scheme: dark) {
+      color: #ebebeb;
+    }
+  }
+
+  .links {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+
+    @media print {
+      display: none;
+    }
+
+    li {
+      flex: none;
+      order: 1;
+      align-self: flex-start;
+    }
+
+    a {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      color: #636363;
+      text-decoration: none;
+      min-width: 43px;
+      display: inline-block;
+
+      &:hover {
+        color: #2d2d2d;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        color: #c4c4c4;
+    
+        &:hover {
+          color: #ebebeb;   
+        }
+      }
+    }
+
+    li[data-active] {
+      a {
+       color: #2d2d2d;
+        font-weight: 500;
+
+        @media (prefers-color-scheme: dark) {
+          color: #ebebeb;
+        }
+      }
+    }
+  }
+</style>

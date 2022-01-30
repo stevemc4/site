@@ -1,0 +1,72 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  tags?: string[];
+  action?: string;
+}
+
+const { title, subtitle, description, tags, action } = Astro.props
+---
+
+<article class="item">
+  <h1 class="title">{title}</h1>
+  {(subtitle && (!action || action !== subtitle) && <h2 class="subtitle">{subtitle}</h2>)}
+  {(subtitle && action && action === subtitle && <a class="subtitle" href={action} target="_blank" rel="noreferrer noopener">{subtitle}</a>)}
+  {(description && <p class="description">{description}</p>)}
+  <!-- {(tags && tags.length > 0 && <TagContainer>
+    {tags.map(tag => <Tag key={`${title}_${tag}`}>{tag}</Tag>)}
+  </TagContainer>)} -->
+</article>
+
+<style lang="scss">
+  .item {
+    .title {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      color: #2d2d2d;
+      margin: 0px;
+
+      @media (prefers-color-scheme: dark) {
+        color: #ebebeb;
+      }
+    }
+
+    .subtitle {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: #636363;
+      margin: 2px 0px 4px;
+
+      @media (prefers-color-scheme: dark) {
+        color: #c4c4c4;
+      }
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+    
+    .description {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: #636363;
+      margin: 8px 0px;
+      white-space: pre-wrap;
+
+      @media (prefers-color-scheme: dark) {
+        color: #c4c4c4;
+      }
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+</style>

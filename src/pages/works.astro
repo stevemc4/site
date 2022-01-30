@@ -1,0 +1,64 @@
+---
+import P from 'prismic-javascript'
+import PrismicDOM from 'prismic-dom'
+
+import Prismic from '../util/prismic'
+
+import Layout from '../layout/Default.astro'
+
+import List from '../components/List/index.astro'
+import ListItem from '../components/List/ListItem.astro'
+import Navbar from '../components/Navbar/index.astro'
+import PageTitle from '../components/PageTitle/index.astro'
+
+const data = await Prismic().query(
+  P.Predicates.at('document.type', 'work'),
+  { orderings: '[document.first_publication_date desc]' }
+)
+---
+<Layout title="Works">
+  <Navbar currentPage="WORKS" />
+  <section>
+    <PageTitle>Works</PageTitle>
+  </section>
+  <List>
+    {data.results.map(item => {
+      const title = PrismicDOM.RichText.asText(item.data.title)
+      const url = PrismicDOM.Link.url(item.data.url)
+      const desc = PrismicDOM.RichText.asText(item.data.description)
+      return (
+        <ListItem
+          title={title}
+          subtitle={url}
+          description={desc}
+          action={url}
+        />
+      )
+    })}
+  </List>
+  <section>
+    <a href="https://github.com/stevemc4" target="_blank" class="github">
+      See More on GitHub
+    </a>
+  </section>
+</Layout>
+
+<style lang="scss">
+  .github {
+    color: #636363;
+    text-decoration: none;
+    
+
+    &:hover {
+      color: #2d2d2d;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: #c4c4c4;
+
+      &:hover {
+        color: #ebebeb;
+      }
+    }
+  }
+</style>

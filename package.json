@@ -5,11 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "dev-astro": "astro dev",
-    "build-astro": "astro build"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "author": "Dhika Rizky (deka_r@outlook.com)",
   "license": "MIT",

@@ -1,0 +1,107 @@
+---
+import P from 'prismic-javascript'
+import PrismicDOM from 'prismic-dom'
+
+import Prismic from '../util/prismic'
+
+import Layout from '../layout/Default.astro'
+
+import List from '../components/List/index.astro'
+import ListItem from '../components/List/ListItem.astro'
+import Navbar from '../components/Navbar/index.astro'
+import PageTitle from '../components/PageTitle/index.astro'
+import TwoColumnList from '../components/TwoColumnList/index.astro'
+
+const pageData = await Prismic().getSingle('about', {})
+const works = await Prismic().query(
+  P.Predicates.at('document.type', 'work'),
+  { orderings: '[document.first_publication_date desc]' }
+)
+---
+<Layout title="About">
+  <Navbar currentPage="ABOUT" />
+  <section>
+    <PageTitle>About Me</PageTitle>
+  </section>
+  <p class="introduction">
+    { PrismicDOM.RichText.asText(pageData.data.description) }
+  </p>
+  <TwoColumnList title="Education">
+    {pageData.data.education.map((edu) => {
+      const name = PrismicDOM.RichText.asText(edu.name)
+      const major = PrismicDOM.RichText.asText(edu.major)
+      const year = PrismicDOM.RichText.asText(edu.year)
+
+      return (
+        <ListItem
+          title={name}
+          subtitle={`${major} · ${year}`}
+        />
+      )
+    })}
+  </TwoColumnList>
+  <TwoColumnList title="Work Experience">
+      {pageData.data.experience.map((exp) => {
+        const name = PrismicDOM.RichText.asText(exp.company)
+        const role = PrismicDOM.RichText.asText(exp.role)
+        const year = PrismicDOM.RichText.asText(exp.year)
+
+        return (
+          <ListItem
+            title={name}
+            subtitle={`${role} · ${year}`}
+          />
+        )
+      })}
+    </TwoColumnList>
+    {works.results && (
+      <TwoColumnList title="Works">
+        {works.results.map((work) => {
+          const title = PrismicDOM.RichText.asText(work.data.title)
+          const url = PrismicDOM.Link.url(work.data.url)
+          const desc = PrismicDOM.RichText.asText(work.data.description)
+
+          return (
+            <ListItem
+              title={title}
+              subtitle={`${url}`}
+              description={desc}
+              action={url}
+            />
+          )
+        })}
+      </TwoColumnList>
+    )}
+    {pageData.data.contacts.length > 0 && (
+      <TwoColumnList title="Contacts">
+        {pageData.data.contacts.map((contact) => {
+          const title = PrismicDOM.RichText.asText(contact.name)
+          const url = PrismicDOM.Link.url(contact.link)
+
+          return (
+            <ListItem
+              title={title}
+              subtitle={url}
+              action={url}
+            />
+          )
+        })}
+      </TwoColumnList>
+    )}
+</Layout>
+
+<style lang="scss">
+  .introduction {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0px;
+
+    color: #636363;
+
+    @media (prefers-color-scheme: dark) {
+      color: #c4c4c4;
+    }
+  }
+</style>

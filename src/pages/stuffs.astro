@@ -36,7 +36,6 @@ const data = await Prismic().query(
           title={title}
           subtitle={`${primarySubtitle}${secondarySubtitle && ` · ${secondarySubtitle}`}`}
           description={description}
-          key={item.uid}
           tags={item.tags}
           action={action}
         />

@@ -8,20 +8,6 @@ const { currentPage }: Props = Astro.props
 
 <nav>
   <h1 class="name">Dhika Rizky</h1>
-  <ul class="links">
-    <li data-active={currentPage === 'HOME'}>
-      <a href="/">Home</a>
-    </li>
-    <li data-active={currentPage === 'WORKS'}>
-      <a href="/works">Works</a>
-    </li>
-    <li data-active={currentPage === 'STUFFS'}>
-      <a href="/stuffs">Stuffs</a>
-    </li>
-    <li data-active={currentPage === 'ABOUT'}>
-      <a href="/about">About</a>
-    </li>
-  </ul>
 </nav>
 
 <style lang="scss">
@@ -71,9 +57,9 @@ const { currentPage }: Props = Astro.props
 
       @media (prefers-color-scheme: dark) {
         color: #c4c4c4;
-    
+
         &:hover {
-          color: #ebebeb;   
+          color: #ebebeb;
         }
       }
     }

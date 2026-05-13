@@ -20,9 +20,5 @@ Then open http://localhost:8000 in your browser.
 
 ## Structure
 
-- `index.html` - Home page
-- `about.html` - About page
-- `works.html` - Works/Projects page
-- `stuffs.html` - Recommendations page
-- `404.html` - Error page
+- `index.html` - Single page site
 - `public/` - Static assets (favicon, etc.)

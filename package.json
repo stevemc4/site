@@ -4,7 +4,9 @@
   "description": "This site can be accessed in https://dhikarizky.me",
   "scripts": {
     "dev": "python3 -m http.server 8000",
-    "serve": "python3 -m http.server 8000"
+    "serve": "python3 -m http.server 8000",
+    "test": "echo \"No tests needed for static HTML site\" && exit 0",
+    "build": "echo \"No build step needed for static HTML site\" && exit 0"
   },
   "author": "Dhika Rizky (deka_r@outlook.com)",
   "license": "MIT",

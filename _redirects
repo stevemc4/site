@@ -1,0 +1,4 @@
+# https://developers.cloudflare.com/pages/configuration/redirects/
+#
+# Cloudflare Pages automatically serves /404.html for unmatched routes,
+# so no custom redirects are required for this static site.

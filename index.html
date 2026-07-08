@@ -52,21 +52,23 @@
               <time datetime="2022-12">Dec 2022</time> &ndash; Present
             </p>
             <ul class="timeline__bullets">
-              <li>Led a multi-stage migration of critical pages to Next.js App Router and a Tailwind-based UI to improve platform-wide performance and maintainability.</li>
-              <li>Replaced Material UI v4 with Tailwind CSS and Headless UI, leveraging React Server Components to cut bundle size. Improved LCP by 58% (3.6s &rarr; 1.5s) and eliminated layout shifts (CLS 0.2 &rarr; 0) on real-user metrics.</li>
-              <li>Built platform features: QRIS payment integration, merchant rating &amp; verification, TKDN compliance display, a negotiation workflow, and decimal-based quantity ordering for government &amp; business procurement.</li>
-              <li>Developed MbizTravel frontend features and API integrations from scratch on Next.js App Router, Tailwind CSS, and Headless UI.</li>
-              <li>Established frontend testing practices using Vitest and MSW for unit testing and API mocking across the team.</li>
+              <li>Frontend engineer on Mbizmarket&rsquo;s B2B procurement platform, working across a strangler-fig migration: maintaining legacy jQuery/PHP web apps (buyer, seller, admin) while incrementally rebuilding them as a modern Next.js monorepo (Turborepo + pnpm) with a shared design system.</li>
+              <li>Worked primarily on the buyer web app, helping migrate core procurement flows to Next.js App Router, including purchase orders, shipping and confirm-shipment/received flows, addendums, tax/DPP handling, invoices, reorder, and decimal-quantity ordering for government and business buyers.</li>
+              <li>Built out MbizTravel&rsquo;s buyer and seller frontends, focused on flight booking and payments: virtual-account providers, KKI, credit-card and platform fees, payment codes, and countdown/grace-period handling.</li>
+              <li>Replaced Material UI v4 with Tailwind CSS and Headless UI, leveraging React Server Components to improve LCP by 58% (3.6s &rarr; 1.5s) and eliminate layout shifts (CLS 0.2 &rarr; 0) on real-user metrics, then followed up with an ongoing performance initiative (deferred scripts and modals, dynamic imports, image prioritization, preconnects).</li>
+              <li>Shipped platform features including QRIS payment, merchant rating and verification, and TKDN compliance display; hardened legacy code with SQL-injection sanitization; and helped establish frontend testing practices with Vitest and MSW.</li>
             </ul>
             <ul class="tags">
               <li>React</li>
               <li>Next.js (App Router)</li>
               <li>TypeScript</li>
+              <li>Turborepo</li>
               <li>Tailwind CSS</li>
               <li>Headless UI</li>
+              <li>RSC</li>
+              <li>jQuery</li>
               <li>Vitest</li>
               <li>MSW</li>
-              <li>RSC</li>
             </ul>
           </article>
 
@@ -106,7 +108,7 @@
               <time datetime="2021-03">Mar 2021</time>
             </p>
             <ul class="timeline__bullets">
-              <li>Owned frontend development for an ACG (anime, comics &amp; games) ecommerce platform, migrating from Create React App to Next.js with Styled Components for better SEO, performance, and maintainability.</li>
+              <li>Led frontend development for an ACG (anime, comics &amp; games) ecommerce platform, migrating from Create React App to Next.js with Styled Components for better SEO, performance, and maintainability.</li>
               <li>Built an automated scraping tool for a proxy-buying service using Puppeteer to pull product details from Japanese hobby retailers (AmiAmi, Hobby Link Japan, Mandarake, CDJapan) with automatic JPY&rarr;IDR conversion for instant quotes.</li>
               <li>Developed and maintained storefront features serving thousands of daily users, including product catalog, cart, and checkout flows that influenced competitor platforms.</li>
             </ul>

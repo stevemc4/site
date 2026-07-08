@@ -1,0 +1,14 @@
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+# Long-cache the fingerprint-free CSS is not possible (stable filename),
+# so cache briefly and revalidate.
+/output.css
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/favicon.png
+  Cache-Control: public, max-age=86400
+
+# Baseline security headers for all responses.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

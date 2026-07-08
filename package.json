@@ -6,11 +6,12 @@
     "clean": "rm -rf dist",
     "copy": "mkdir -p dist && cp index.html 404.html favicon.png _headers _redirects dist/",
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
-    "build": "npm run clean && npm run copy && npm run build:css",
-    "dev": "npm run copy && tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "build": "pnpm run clean && pnpm run copy && pnpm run build:css",
+    "dev": "pnpm run copy && tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "author": "Dhika Rizky (deka_r@outlook.com)",
   "license": "MIT",
+  "packageManager": "pnpm@11.1.1",
   "devDependencies": {
     "tailwindcss": "^3.4.17"
   },

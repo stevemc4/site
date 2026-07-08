@@ -1,4 +1,30 @@
-@import url('https://rsms.me/inter/inter.css');
+/* Both fonts are self-hosted (no external font dependency). Plus Jakarta Sans is
+   the original Tokotype release so its stylistic alternates (Lurus = ss02,
+   Lingkar = ss03) are available — the Google Fonts build strips them. PT Sans
+   Narrow (roundel code) is the latin subset from Google's font files. */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/PlusJakartaSans-VF.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src: url('/fonts/PTSansNarrow-400-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src: url('/fonts/PTSansNarrow-700-latin.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -12,6 +38,256 @@
   @media (prefers-color-scheme: dark) {
     body {
       @apply bg-ink text-ink-dark;
+    }
+  }
+
+  /* Lurus + Lingkar alternates on the name heading. */
+  .name-alt {
+    font-feature-settings: 'ss02', 'ss03';
+  }
+}
+
+@layer components {
+  /* Avatar (headpat meme) sitting to the left of the name. Click to re-roll the
+     line; unselectable so dragging/clicking doesn't highlight it. */
+  .headpat {
+    --w: 160px;
+    position: relative;
+    width: var(--w);
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    flex: none;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Line color fills the whole card behind the body art. The head-shaped hole in
+     the PNG reveals it as the exact head cutout (hair silhouette + hand overlap). */
+  .headpat__fill {
+    position: absolute;
+    inset: 0;
+    background: var(--line-color, #802b7c);
+    z-index: 1;
+    transition: background-color 320ms ease;
+  }
+
+  /* The line code, centered over the head area, behind the body art. Fades out
+     while swapping text, then back in, so the code crossfades with the color. */
+  .headpat__code {
+    position: absolute;
+    left: 45.5%;
+    top: 40.5%;
+    transform: translate(-50%, -50%);
+    color: var(--line-text, #ffffff);
+    font-family: 'PT Sans Narrow', 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: calc(var(--w) * 0.2);
+    line-height: 1;
+    text-align: center;
+    z-index: 1;
+    transition: opacity 160ms ease;
+  }
+
+  .headpat.is-swapping .headpat__code {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .headpat__fill,
+    .headpat__code {
+      transition: none;
+    }
+  }
+
+  /* Body art (hand/arm/uniform) with the blob knocked out; sits above the blob
+     so the hand overlays the "head". */
+  .headpat__body {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Section heading (Experience / Projects / Skills). */
+  .section-title {
+    margin: 0 0 20px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rail-color, #802b7c);
+    transition: color 320ms ease;
+  }
+
+  /* Subtle transit-style timeline: a thin rail with a station dot per entry. The
+     rail/dot color follows the active line (via --rail-color, set on :root). */
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-left: 24px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: var(--rail-color, #802b7c);
+    border-radius: 1px;
+    transition: background-color 320ms ease;
+  }
+
+  .timeline__item {
+    position: relative;
+  }
+
+  /* Station dot on the rail. */
+  .timeline__item::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 4px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--rail-color, #802b7c);
+    box-shadow: 0 0 0 3px var(--paper-color, #ffffff);
+    transition: background-color 320ms ease;
+  }
+
+  .timeline__role {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d2d2d;
+  }
+
+  .timeline__meta {
+    margin: 2px 0 0;
+    font-size: 15px;
+    color: #636363;
+  }
+
+  .timeline__bullets {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .timeline__bullets li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #636363;
+  }
+
+  .timeline__bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--rail-color, #802b7c);
+    transition: background-color 320ms ease;
+  }
+
+  /* Tech tags: subtle pill in the active line color. */
+  .tags {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tags li {
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px 8px;
+    border-radius: 4px;
+    color: var(--rail-color, #802b7c);
+    background: color-mix(in srgb, var(--rail-color, #802b7c) 12%, transparent);
+    transition: color 320ms ease, background-color 320ms ease;
+  }
+
+  /* Skills: a muted group label + its values. */
+  .skill-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .skill-group__label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #636363;
+  }
+
+  .skill-group__values {
+    font-size: 15px;
+    color: #2d2d2d;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .timeline__role,
+    .skill-group__values {
+      color: #ebebeb;
+    }
+
+    .timeline__meta,
+    .timeline__bullets li,
+    .skill-group__label {
+      color: #c4c4c4;
+    }
+
+    .timeline__item::before {
+      box-shadow: 0 0 0 3px var(--paper-color, #2d2d2d);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .section-title,
+    .timeline::before,
+    .timeline__item::before,
+    .timeline__bullets li::before,
+    .tags li {
+      transition: none;
+    }
+  }
+
+  @media print {
+    .section-title,
+    .timeline::before,
+    .timeline__item::before,
+    .timeline__bullets li::before {
+      background: #2d2d2d;
+      color: #2d2d2d;
+    }
+
+    .tags li {
+      color: #2d2d2d;
+      background: transparent;
+      border: 1px solid #d0d0d0;
     }
   }
 }

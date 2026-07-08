@@ -8,6 +8,10 @@
 /favicon.png
   Cache-Control: public, max-age=86400
 
+# Self-hosted font is immutable; cache it hard.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
 # Baseline security headers for all responses.
 /*
   X-Content-Type-Options: nosniff

@@ -54,13 +54,44 @@ export function pickRandom() {
   return LINES[Math.floor(Math.random() * LINES.length)]
 }
 
+function rgb(hex) {
+  const h = hex.replace(/^#/, '')
+  return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]
+}
+
+function luminance([r, g, b]) {
+  return 0.299 * r + 0.587 * g + 0.114 * b
+}
+
+function toHex([r, g, b]) {
+  return '#' + [r, g, b].map(v => Math.round(v).toString(16).padStart(2, '0')).join('')
+}
+
 // Return the readable text color ('#2d2d2d' or '#ffffff') for a given line color,
 // using the luminance formula from the commute repo's utils/colors.ts.
 export function textColor(hex) {
-  const h = hex.replace(/^#/, '')
-  const r = parseInt(h.slice(0, 2), 16)
-  const g = parseInt(h.slice(2, 4), 16)
-  const b = parseInt(h.slice(4, 6), 16)
-  const luminance = 0.299 * r + 0.587 * g + 0.114 * b
-  return luminance > 150 ? '#2d2d2d' : '#ffffff'
+  return luminance(rgb(hex)) > 150 ? '#2d2d2d' : '#ffffff'
+}
+
+// Timeline rail/accent color: keep it legible against the page background in
+// either theme. On light, pale colors (bright yellows/light greens) wash out, so
+// darken them; on dark, deep colors (navy, dark purple) disappear, so lighten
+// them. Colors with enough contrast against the current background pass through.
+export function railColor(hex, dark = false) {
+  const c = rgb(hex)
+  const lum = luminance(c)
+  if (dark) {
+    // Lighten colors that are too dark for the ~#2d2d2d background.
+    const MIN = 110
+    if (lum >= MIN) return hex
+    const t = Math.min(1, (MIN - lum) / MIN) * 0.7
+    const light = [235, 235, 235]
+    return toHex(c.map((v, i) => v * (1 - t) + light[i] * t))
+  }
+  // Darken colors that are too light for the white background.
+  const MAX = 150
+  if (lum <= MAX) return hex
+  const t = Math.min(1, (lum - MAX) / (255 - MAX)) * 0.55
+  const ink = [45, 45, 45]
+  return toHex(c.map((v, i) => v * (1 - t) + ink[i] * t))
 }

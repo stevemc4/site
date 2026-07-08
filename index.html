@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" href="/favicon.png" />
     <title>Dhika Rizky</title>
-    <meta name="description" content="Hi There! I&rsquo;m Dhika Rizky, a frontend engineer and a big weeb" />
+    <meta name="description" content="Dhika Rizky, a software engineer in Jakarta. Experience, projects, and skills." />
     <link rel="stylesheet" href="/output.css" />
   </head>
   <body>
@@ -33,23 +33,183 @@
             Hi There!<br />
             I&rsquo;m Dhika, a frontend engineer and a big weeb<br />
           </p>
+          <a
+            href="mailto:dhika@dhikarizky.me"
+            class="text-[15px] text-muted underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:text-muted-dark dark:hover:text-ink-dark"
+          >
+            dhika@dhikarizky.me
+          </a>
         </div>
       </div>
+
+      <section class="flex flex-col">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <article class="timeline__item">
+            <h3 class="timeline__role">Software Engineer &middot; Mbiz</h3>
+            <p class="timeline__meta">
+              Kuningan, Jakarta Selatan &middot;
+              <time datetime="2022-12">Dec 2022</time> &ndash; Present
+            </p>
+            <ul class="timeline__bullets">
+              <li>Led a multi-stage migration of critical pages to Next.js App Router and a Tailwind-based UI to improve platform-wide performance and maintainability.</li>
+              <li>Replaced Material UI v4 with Tailwind CSS and Headless UI, leveraging React Server Components to cut bundle size. Improved LCP by 58% (3.6s &rarr; 1.5s) and eliminated layout shifts (CLS 0.2 &rarr; 0) on real-user metrics.</li>
+              <li>Built platform features: QRIS payment integration, merchant rating &amp; verification, TKDN compliance display, a negotiation workflow, and decimal-based quantity ordering for government &amp; business procurement.</li>
+              <li>Developed MbizTravel frontend features and API integrations from scratch on Next.js App Router, Tailwind CSS, and Headless UI.</li>
+              <li>Established frontend testing practices using Vitest and MSW for unit testing and API mocking across the team.</li>
+            </ul>
+            <ul class="tags">
+              <li>React</li>
+              <li>Next.js (App Router)</li>
+              <li>TypeScript</li>
+              <li>Tailwind CSS</li>
+              <li>Headless UI</li>
+              <li>Vitest</li>
+              <li>MSW</li>
+              <li>RSC</li>
+            </ul>
+          </article>
+
+          <article class="timeline__item">
+            <h3 class="timeline__role">Software Engineer &middot; Stamps Indonesia</h3>
+            <p class="timeline__meta">
+              Kembangan, Jakarta Barat &middot;
+              <time datetime="2021-04">Apr 2021</time> &ndash;
+              <time datetime="2022-12">Dec 2022</time>
+            </p>
+            <ul class="timeline__bullets">
+              <li>Developed backend services for white-label POS and CRM platforms, integrating third-party point-of-sale terminals, food-ordering apps, and custom APIs for inventory management and customer tracking.</li>
+              <li>Implemented Xendit payment gateway integration for Android apps, handling transaction processing and payment workflows.</li>
+              <li>Led development of a telemedicine and healthcare reservation system for the Bunda Hospitals network.</li>
+              <li>Contributed to The Harvest Cakes&rsquo; Android app and web platform, building ordering features, vendor integrations, and UI enhancements.</li>
+            </ul>
+            <ul class="tags">
+              <li>Django</li>
+              <li>PostgreSQL</li>
+              <li>Redis</li>
+              <li>Python</li>
+              <li>Kotlin</li>
+              <li>Retrofit</li>
+              <li>MongoDB Realm</li>
+              <li>Xendit</li>
+              <li>JavaScript</li>
+              <li>jQuery</li>
+              <li>SCSS</li>
+            </ul>
+          </article>
+
+          <article class="timeline__item">
+            <h3 class="timeline__role">Frontend Engineer &middot; Kyou Hobby Shop</h3>
+            <p class="timeline__meta">
+              Medan Satria, Kota Bekasi &middot;
+              <time datetime="2019-04">Apr 2019</time> &ndash;
+              <time datetime="2021-03">Mar 2021</time>
+            </p>
+            <ul class="timeline__bullets">
+              <li>Owned frontend development for an ACG (anime, comics &amp; games) ecommerce platform, migrating from Create React App to Next.js with Styled Components for better SEO, performance, and maintainability.</li>
+              <li>Built an automated scraping tool for a proxy-buying service using Puppeteer to pull product details from Japanese hobby retailers (AmiAmi, Hobby Link Japan, Mandarake, CDJapan) with automatic JPY&rarr;IDR conversion for instant quotes.</li>
+              <li>Developed and maintained storefront features serving thousands of daily users, including product catalog, cart, and checkout flows that influenced competitor platforms.</li>
+            </ul>
+            <ul class="tags">
+              <li>React</li>
+              <li>Next.js</li>
+              <li>TypeScript</li>
+              <li>Styled Components</li>
+              <li>Puppeteer</li>
+              <li>SCSS</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="flex flex-col">
+        <h2 class="section-title">Projects</h2>
+        <div class="timeline">
+          <article class="timeline__item">
+            <h3 class="timeline__role">
+              <a href="https://commute.shiorilabs.id" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2">Commute</a>
+            </h3>
+            <p class="timeline__meta">Open-source Jakarta transit schedule aggregator</p>
+            <ul class="timeline__bullets">
+              <li>Consolidates Jakarta&rsquo;s rail systems (KRL, MRT, LRT) into a unified search interface, built on Cloudflare Workers for edge computing.</li>
+              <li>Automated data pipeline scraping operator websites, with multi-layer caching (D1 + KV + SWR) for fast responses.</li>
+              <li><em>The line data powering the avatar above (try clicking it!) comes from this project.</em></li>
+            </ul>
+            <ul class="tags">
+              <li>Cloudflare Workers</li>
+              <li>Cloudflare Pages</li>
+              <li>React Router</li>
+              <li>Hono</li>
+              <li>D1</li>
+              <li>KV</li>
+              <li>Kysely</li>
+              <li>SWR</li>
+              <li>Tailwind CSS</li>
+              <li>Headless UI</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-4">
+        <h2 class="section-title">Skills</h2>
+        <div class="skill-group">
+          <span class="skill-group__label">Programming Languages</span>
+          <span class="skill-group__values">HTML5, CSS3, SCSS, JavaScript, TypeScript, Python, Kotlin, C#</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">Frontend Development</span>
+          <span class="skill-group__values">React, Next.js, React Router, Tailwind CSS, Styled Components, React Server Components</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">Backend Development</span>
+          <span class="skill-group__values">Node.js, Express.js, Hono, Django, RESTful APIs</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">Database &amp; Storage</span>
+          <span class="skill-group__values">PostgreSQL, MySQL, Cloudflare D1, Cloudflare KV, Redis, MongoDB Realm</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">Testing &amp; QA</span>
+          <span class="skill-group__values">Vitest, MSW (Mock Service Worker), Unit Testing</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">DevOps &amp; Infrastructure</span>
+          <span class="skill-group__values">Docker, GitHub Actions, Git, Ubuntu Server, CI/CD</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">Cloud Platforms</span>
+          <span class="skill-group__values">Vercel, Cloudflare Workers, Cloudflare Pages, Netlify</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">Spoken Languages</span>
+          <span class="skill-group__values">Indonesian (Native), English (Professional Working), Mandarin Chinese (Basic)</span>
+        </div>
+      </section>
     </div>
     <script type="module">
-      import { pickRandom, textColor } from '/lines.js'
+      import { pickRandom, textColor, railColor } from '/lines.js'
       const headpat = document.getElementById('headpat')
       const codeEl = document.getElementById('headpat-code')
+      const root = document.documentElement
+      const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
       function apply(line) {
         headpat.style.setProperty('--line-color', line.color)
         headpat.style.setProperty('--line-text', textColor(line.color))
         codeEl.textContent = line.code
+        // Share the active line color page-wide so the timeline accent follows it.
+        // The rail is nudged for legibility against the current theme's background.
+        root.style.setProperty('--line-color', line.color)
+        root.style.setProperty('--rail-color', railColor(line.color, darkQuery.matches))
       }
 
       // Random line on load (applied instantly, no fade on first paint).
       let current = pickRandom()
       apply(current)
+
+      // Re-tune the rail color if the OS theme flips while the page is open.
+      darkQuery.addEventListener('change', () => apply(current))
 
       // Click to re-roll a different line, crossfading: fade the code out, swap
       // color + text while it's invisible (the fill's background-color transition

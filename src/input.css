@@ -1,4 +1,30 @@
-@import url('https://rsms.me/inter/inter.css');
+/* Both fonts are self-hosted (no external font dependency). Plus Jakarta Sans is
+   the original Tokotype release so its stylistic alternates (Lurus = ss02,
+   Lingkar = ss03) are available — the Google Fonts build strips them. PT Sans
+   Narrow (roundel code) is the latin subset from Google's font files. */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/PlusJakartaSans-VF.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src: url('/fonts/PTSansNarrow-400-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src: url('/fonts/PTSansNarrow-700-latin.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -13,5 +39,79 @@
     body {
       @apply bg-ink text-ink-dark;
     }
+  }
+
+  /* Lurus + Lingkar alternates on the name heading. */
+  .name-alt {
+    font-feature-settings: 'ss02', 'ss03';
+  }
+}
+
+@layer components {
+  /* Avatar (headpat meme) sitting to the left of the name. Click to re-roll the
+     line; unselectable so dragging/clicking doesn't highlight it. */
+  .headpat {
+    --w: 160px;
+    position: relative;
+    width: var(--w);
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    flex: none;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Line color fills the whole card behind the body art. The head-shaped hole in
+     the PNG reveals it as the exact head cutout (hair silhouette + hand overlap). */
+  .headpat__fill {
+    position: absolute;
+    inset: 0;
+    background: var(--line-color, #802b7c);
+    z-index: 1;
+    transition: background-color 320ms ease;
+  }
+
+  /* The line code, centered over the head area, behind the body art. Fades out
+     while swapping text, then back in, so the code crossfades with the color. */
+  .headpat__code {
+    position: absolute;
+    left: 45.5%;
+    top: 40.5%;
+    transform: translate(-50%, -50%);
+    color: var(--line-text, #ffffff);
+    font-family: 'PT Sans Narrow', 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: calc(var(--w) * 0.2);
+    line-height: 1;
+    text-align: center;
+    z-index: 1;
+    transition: opacity 160ms ease;
+  }
+
+  .headpat.is-swapping .headpat__code {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .headpat__fill,
+    .headpat__code {
+      transition: none;
+    }
+  }
+
+  /* Body art (hand/arm/uniform) with the blob knocked out; sits above the blob
+     so the hand overlays the "head". */
+  .headpat__body {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
   }
 }

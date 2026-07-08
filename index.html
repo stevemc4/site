@@ -19,17 +19,56 @@
              min-[1153px]:mb-24 min-[1153px]:ml-64 min-[1153px]:mr-auto min-[1153px]:mt-24
              print:m-0 print:p-4"
     >
-      <nav>
-        <h1 class="m-0 text-[48px] font-black text-ink dark:text-ink-dark">
-          Dhika Rizky
-        </h1>
-      </nav>
-      <section>
-        <p class="m-0 text-[18px] leading-[22px] text-muted dark:text-muted-dark">
-          Hi There!<br />
-          I&rsquo;m Dhika, a frontend engineer and a big weeb<br />
-        </p>
-      </section>
+      <div class="flex flex-col items-start gap-6 min-[481px]:flex-row min-[481px]:items-center min-[481px]:gap-8">
+        <div class="headpat" id="headpat">
+          <div class="headpat__fill"></div>
+          <div class="headpat__code" id="headpat-code">L13E</div>
+          <img class="headpat__body" src="/head-hole.png" alt="A hand headpatting Dhika" />
+        </div>
+        <div class="flex flex-col gap-3">
+          <h1 class="name-alt m-0 text-[48px] font-bold leading-none text-ink dark:text-ink-dark">
+            Dhika Rizky
+          </h1>
+          <p class="m-0 text-[18px] leading-[22px] text-muted dark:text-muted-dark">
+            Hi There!<br />
+            I&rsquo;m Dhika, a frontend engineer and a big weeb<br />
+          </p>
+        </div>
+      </div>
     </div>
+    <script type="module">
+      import { pickRandom, textColor } from '/lines.js'
+      const headpat = document.getElementById('headpat')
+      const codeEl = document.getElementById('headpat-code')
+
+      function apply(line) {
+        headpat.style.setProperty('--line-color', line.color)
+        headpat.style.setProperty('--line-text', textColor(line.color))
+        codeEl.textContent = line.code
+      }
+
+      // Random line on load (applied instantly, no fade on first paint).
+      let current = pickRandom()
+      apply(current)
+
+      // Click to re-roll a different line, crossfading: fade the code out, swap
+      // color + text while it's invisible (the fill's background-color transition
+      // runs concurrently), then fade back in.
+      let swapping = false
+      headpat.addEventListener('click', () => {
+        if (swapping) return
+        swapping = true
+        let next = pickRandom()
+        while (next.code === current.code) next = pickRandom()
+        current = next
+
+        headpat.classList.add('is-swapping')
+        window.setTimeout(() => {
+          apply(current)
+          headpat.classList.remove('is-swapping')
+          swapping = false
+        }, 160)
+      })
+    </script>
   </body>
 </html>

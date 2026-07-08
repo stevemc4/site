@@ -129,23 +129,24 @@
             <h3 class="timeline__role">
               <a href="https://commute.shiorilabs.id" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2">Commute</a>
             </h3>
-            <p class="timeline__meta">Open-source Jakarta transit schedule aggregator</p>
+            <p class="timeline__meta">Open-source Jakarta rail companion app</p>
             <ul class="timeline__bullets">
-              <li>Consolidates Jakarta&rsquo;s rail systems (KRL, MRT, LRT) into a unified search interface, built on Cloudflare Workers for edge computing.</li>
-              <li>Automated data pipeline scraping operator websites, with multi-layer caching (D1 + KV + SWR) for fast responses.</li>
+              <li>Unifies Jakarta&rsquo;s four rail operators (KAI Commuter, MRT Jakarta, LRT Jakarta, LRT Jabodebek) into one app for station search, live timetables, lines, and interchange hubs.</li>
+              <li>Built an interactive WebGL transit map from custom-built vector tiles, plus a line-topology model that resolves trunk and branch routing.</li>
+              <li>Installable PWA with offline data caching, running on Cloudflare Workers and D1 at the edge, with a scraping pipeline that keeps schedules current.</li>
               <li><em>The line data powering the avatar above (try clicking it!) comes from this project.</em></li>
             </ul>
             <ul class="tags">
+              <li>React 19</li>
+              <li>React Router v7</li>
               <li>Cloudflare Workers</li>
-              <li>Cloudflare Pages</li>
-              <li>React Router</li>
-              <li>Hono</li>
               <li>D1</li>
-              <li>KV</li>
+              <li>Hono</li>
               <li>Kysely</li>
               <li>SWR</li>
+              <li>WebGL</li>
+              <li>PWA</li>
               <li>Tailwind CSS</li>
-              <li>Headless UI</li>
             </ul>
           </article>
         </div>

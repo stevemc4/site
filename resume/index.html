@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <title>Resume &middot; Dhika Rizky</title>
+    <meta name="description" content="Resume of Dhika Rizky, a software engineer in Jakarta. Experience, projects, and skills." />
+    <link rel="stylesheet" href="/output.css" />
+  </head>
+  <body>
+    <div
+      class="box-border flex w-full max-w-[640px] flex-col gap-12
+             m-0 px-8 py-24
+             min-[481px]:px-12
+             min-[769px]:m-24 min-[769px]:p-0
+             min-[833px]:mx-auto min-[833px]:my-24
+             min-[1153px]:mb-24 min-[1153px]:ml-64 min-[1153px]:mr-auto min-[1153px]:mt-24
+             print:m-0 print:p-4"
+    >
+      <a
+        href="/"
+        class="-mb-8 text-[15px] text-muted underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:text-muted-dark dark:hover:text-ink-dark print:hidden"
+      >
+        &larr; dhikarizky.me
+      </a>
+      <div class="flex flex-col items-start gap-6 min-[481px]:flex-row min-[481px]:items-center min-[481px]:gap-8">
+        <div class="headpat" id="headpat">
+          <div class="headpat__fill"></div>
+          <div class="headpat__code" id="headpat-code">L13E</div>
+          <img class="headpat__body" src="/head-hole.png" alt="A hand headpatting Dhika" />
+        </div>
+        <div class="flex flex-col gap-3">
+          <h1 class="name-alt m-0 text-[48px] font-bold leading-none text-ink dark:text-ink-dark">
+            Dhika Rizky
+          </h1>
+          <p class="m-0 text-[18px] leading-[22px] text-muted dark:text-muted-dark">
+            Hi There!<br />
+            I&rsquo;m Dhika, a frontend engineer and a big weeb<br />
+          </p>
+          <a
+            href="mailto:dhika@dhikarizky.me"
+            class="text-[15px] text-muted underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:text-muted-dark dark:hover:text-ink-dark"
+          >
+            dhika@dhikarizky.me
+          </a>
+        </div>
+      </div>
+
+      <section class="flex flex-col">
+        <h2 class="section-title">About</h2>
+        <div class="flex flex-col gap-4 text-[16px] leading-relaxed text-muted dark:text-muted-dark">
+          <p>
+            Hai, I&rsquo;m Dhika. A software developer, transit nerd (I run
+            <a href="https://x.com/shitpostrans" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">Buswayposting</a>),
+            and a weeb.
+          </p>
+          <p>
+            I watched
+            <a href="https://myanimelist.net/anime/50416/" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">Skip and Loafer</a>
+            (please watch Skip and Loafer) and
+            <a href="https://myanimelist.net/anime/35839/" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">A Place Further Than the Universe</a>,
+            listen to Hinatazaka46, and there&rsquo;s a Mitsumi + Shima figurine
+            sitting above my PC case. Chisato Nishikigi and Shigure Ui are up there
+            too, so&hellip; yeah.
+          </p>
+        </div>
+      </section>
+
+      <section class="flex flex-col">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <article class="timeline__item">
+            <h3 class="timeline__role">Software Engineer &middot; Mbiz</h3>
+            <p class="timeline__meta">
+              Kuningan, Jakarta Selatan &middot;
+              <time datetime="2022-12">Dec 2022</time> &ndash; Present
+            </p>
+            <ul class="timeline__bullets">
+              <li>Frontend engineer on Mbizmarket&rsquo;s B2B procurement platform, working across a strangler-fig migration: maintaining legacy jQuery/PHP web apps (buyer, seller, admin) while incrementally rebuilding them as a modern Next.js monorepo (Turborepo + pnpm) with a shared design system.</li>
+              <li>Worked primarily on the buyer web app, helping migrate core procurement flows to Next.js App Router, including purchase orders, shipping and confirm-shipment/received flows, addendums, tax/DPP handling, invoices, reorder, and decimal-quantity ordering for government and business buyers.</li>
+              <li>Built out MbizTravel&rsquo;s buyer and seller frontends, focused on flight booking and payments: virtual-account providers, KKI, credit-card and platform fees, payment codes, and countdown/grace-period handling.</li>
+              <li>Replaced Material UI v4 with Tailwind CSS and Headless UI, leveraging React Server Components to improve LCP by 58% (3.6s &rarr; 1.5s) and eliminate layout shifts (CLS 0.2 &rarr; 0) on real-user metrics, then followed up with an ongoing performance initiative (deferred scripts and modals, dynamic imports, image prioritization, preconnects).</li>
+              <li>Shipped platform features including QRIS payment, merchant rating and verification, and TKDN compliance display; hardened legacy code with SQL-injection sanitization; and helped establish frontend testing practices with Vitest and MSW.</li>
+            </ul>
+            <ul class="tags">
+              <li>React</li>
+              <li>Next.js (App Router)</li>
+              <li>TypeScript</li>
+              <li>Turborepo</li>
+              <li>Tailwind CSS</li>
+              <li>Headless UI</li>
+              <li>RSC</li>
+              <li>jQuery</li>
+              <li>Vitest</li>
+              <li>MSW</li>
+            </ul>
+          </article>
+
+          <article class="timeline__item">
+            <h3 class="timeline__role">Software Engineer &middot; Stamps Indonesia</h3>
+            <p class="timeline__meta">
+              Kembangan, Jakarta Barat &middot;
+              <time datetime="2021-04">Apr 2021</time> &ndash;
+              <time datetime="2022-12">Dec 2022</time>
+            </p>
+            <ul class="timeline__bullets">
+              <li>Developed backend services for white-label POS and CRM platforms, integrating third-party point-of-sale terminals, food-ordering apps, and custom APIs for inventory management and customer tracking.</li>
+              <li>Implemented Xendit payment gateway integration for Android apps, handling transaction processing and payment workflows.</li>
+              <li>Led development of a telemedicine and healthcare reservation system for the Bunda Hospitals network.</li>
+              <li>Contributed to The Harvest Cakes&rsquo; Android app and web platform, building ordering features, vendor integrations, and UI enhancements.</li>
+            </ul>
+            <ul class="tags">
+              <li>Django</li>
+              <li>PostgreSQL</li>
+              <li>Redis</li>
+              <li>Python</li>
+              <li>Kotlin</li>
+              <li>Retrofit</li>
+              <li>MongoDB Realm</li>
+              <li>Xendit</li>
+              <li>JavaScript</li>
+              <li>jQuery</li>
+              <li>SCSS</li>
+            </ul>
+          </article>
+
+          <article class="timeline__item">
+            <h3 class="timeline__role">Software Engineer &middot; Kyou Hobby Shop</h3>
+            <p class="timeline__meta">
+              Medan Satria, Kota Bekasi &middot;
+              <time datetime="2019-04">Apr 2019</time> &ndash;
+              <time datetime="2021-03">Mar 2021</time> &middot;
+              <time datetime="2025-11">Nov 2025</time> &ndash; Present (consulting)
+            </p>
+            <ul class="timeline__bullets">
+              <li>Led frontend development for an ACG (anime, comics &amp; games) ecommerce platform, migrating from Create React App to Next.js with Styled Components for better SEO, performance, and maintainability. (2019&ndash;2021)</li>
+              <li>Built an automated scraping tool for a proxy-buying service using Puppeteer to pull product details from Japanese hobby retailers (AmiAmi, Hobby Link Japan, Mandarake, CDJapan) with automatic JPY&rarr;IDR conversion for instant quotes. (2019&ndash;2021)</li>
+              <li>Returned as a consultant across the kyou.id product: the Next.js storefront (Google Wallet login, TanStack Query migration, a Ctrl+K fuzzy search), Go backend services (order and user APIs plus a from-scratch notification service with FCM and Google Wallet transports), and an Elasticsearch search engine. (2025&ndash;present)</li>
+              <li>Built out the native Android app in Kotlin and Jetpack Compose (Hilt, Ktor, Coroutines) to feature parity with the web, including cart, checkout, and payment flows, vouchers, an order-tracking timeline, and Firebase push notifications with deep linking. (2025&ndash;present)</li>
+            </ul>
+            <ul class="tags">
+              <li>Next.js</li>
+              <li>TypeScript</li>
+              <li>Go</li>
+              <li>Kotlin</li>
+              <li>Jetpack Compose</li>
+              <li>TanStack Query</li>
+              <li>Elasticsearch</li>
+              <li>Firebase FCM</li>
+              <li>Puppeteer</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="flex flex-col">
+        <h2 class="section-title">Projects</h2>
+        <div class="timeline">
+          <article class="timeline__item">
+            <h3 class="timeline__role">
+              <a href="https://commute.shiorilabs.id" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2">Commute</a>
+            </h3>
+            <p class="timeline__meta">Open-source Jakarta rail companion app</p>
+            <ul class="timeline__bullets">
+              <li>Unifies Jakarta&rsquo;s four rail operators (KAI Commuter, MRT Jakarta, LRT Jakarta, LRT Jabodebek) into one app for station search, live timetables, lines, and interchange hubs.</li>
+              <li>Built an interactive WebGL transit map by generating vector tiles from Transport for Jakarta&rsquo;s (FDTJ) integration map, plus a line-topology model that resolves trunk and branch routing.</li>
+              <li>Installable PWA with offline data caching, running on Cloudflare Workers and D1 at the edge, with a scraping pipeline that keeps schedules current.</li>
+              <li><em>The line data powering the avatar above (try clicking it!) comes from this project.</em></li>
+            </ul>
+            <ul class="tags">
+              <li>React 19</li>
+              <li>React Router v7</li>
+              <li>Cloudflare Workers</li>
+              <li>D1</li>
+              <li>Hono</li>
+              <li>Kysely</li>
+              <li>SWR</li>
+              <li>WebGL</li>
+              <li>PWA</li>
+              <li>Tailwind CSS</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-4">
+        <h2 class="section-title">Skills</h2>
+        <div class="skill-group">
+          <span class="skill-group__label">Programming Languages</span>
+          <span class="skill-group__values">HTML5, CSS3, SCSS, JavaScript, TypeScript, Python, Kotlin, C#</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">Frontend Development</span>
+          <span class="skill-group__values">React, Next.js, React Router, Tailwind CSS, Styled Components, React Server Components</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">Backend Development</span>
+          <span class="skill-group__values">Node.js, Express.js, Hono, Django, RESTful APIs</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">Database &amp; Storage</span>
+          <span class="skill-group__values">PostgreSQL, MySQL, Cloudflare D1, Cloudflare KV, Redis, MongoDB Realm</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">Testing &amp; QA</span>
+          <span class="skill-group__values">Vitest, MSW (Mock Service Worker), Unit Testing</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">DevOps &amp; Infrastructure</span>
+          <span class="skill-group__values">Docker, GitHub Actions, Git, Ubuntu Server, CI/CD</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">Cloud Platforms</span>
+          <span class="skill-group__values">Vercel, Cloudflare Workers, Cloudflare Pages, Netlify</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group__label">Spoken Languages</span>
+          <span class="skill-group__values">Indonesian (Native), English (Professional Working), Mandarin Chinese (Basic)</span>
+        </div>
+      </section>
+    </div>
+    <script type="module">
+      import { pickRandom, textColor, railColor } from '/lines.js'
+      const headpat = document.getElementById('headpat')
+      const codeEl = document.getElementById('headpat-code')
+      const root = document.documentElement
+      const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+      function apply(line) {
+        headpat.style.setProperty('--line-color', line.color)
+        headpat.style.setProperty('--line-text', textColor(line.color))
+        codeEl.textContent = line.code
+        // Share the active line color page-wide so the timeline accent follows it.
+        // The rail is nudged for legibility against the current theme's background.
+        root.style.setProperty('--line-color', line.color)
+        root.style.setProperty('--rail-color', railColor(line.color, darkQuery.matches))
+      }
+
+      // Random line on load (applied instantly, no fade on first paint).
+      let current = pickRandom()
+      apply(current)
+
+      // Re-tune the rail color if the OS theme flips while the page is open.
+      darkQuery.addEventListener('change', () => apply(current))
+
+      // Click to re-roll a different line, crossfading: fade the code out, swap
+      // color + text while it's invisible (the fill's background-color transition
+      // runs concurrently), then fade back in.
+      let swapping = false
+      headpat.addEventListener('click', () => {
+        if (swapping) return
+        swapping = true
+        let next = pickRandom()
+        while (next.code === current.code) next = pickRandom()
+        current = next
+
+        headpat.classList.add('is-swapping')
+        window.setTimeout(() => {
+          apply(current)
+          headpat.classList.remove('is-swapping')
+          swapping = false
+        }, 160)
+      })
+    </script>
+  </body>
+</html>

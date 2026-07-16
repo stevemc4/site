@@ -4,11 +4,11 @@
   "description": "This site can be accessed in https://dhikarizky.me",
   "scripts": {
     "clean": "rm -rf dist",
-    "copy": "mkdir -p dist/fonts && cp index.html 404.html favicon.png head-hole.png lines.js _headers _redirects dist/ && cp public/fonts/* dist/fonts/",
+    "copy": "mkdir -p dist/fonts dist/resume && cp index.html 404.html favicon.png head-hole.png commute-logotype.svg lines.js _headers _redirects dist/ && cp resume/index.html dist/resume/ && cp public/fonts/* dist/fonts/",
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
     "build": "pnpm run clean && pnpm run copy && pnpm run build:css",
     "dev:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "dev:static": "chokidar \"index.html\" \"404.html\" \"lines.js\" \"favicon.png\" \"head-hole.png\" \"_headers\" \"_redirects\" -c \"pnpm run copy\" --initial",
+    "dev:static": "chokidar \"index.html\" \"resume/index.html\" \"404.html\" \"lines.js\" \"favicon.png\" \"head-hole.png\" \"commute-logotype.svg\" \"_headers\" \"_redirects\" -c \"pnpm run copy\" --initial",
     "dev:serve": "sirv dist --dev --port 3000",
     "dev": "concurrently -k -n css,static,serve -c cyan,magenta,green \"pnpm:dev:css\" \"pnpm:dev:static\" \"pnpm:dev:serve\""
   },

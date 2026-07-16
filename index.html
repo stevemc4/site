@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" href="/favicon.png" />
     <title>Dhika Rizky</title>
-    <meta name="description" content="Dhika Rizky — weeb, transit nerd, and software engineer in Jakarta." />
+    <meta name="description" content="Hai, I'm Dhika Rizky" />
     <link rel="stylesheet" href="/output.css" />
   </head>
-  <body>
+  <body class="home">
     <div
-      class="box-border flex w-full max-w-[640px] flex-col gap-12
+      class="box-border flex w-full max-w-[680px] flex-col gap-24
              m-0 px-8 py-24
              min-[481px]:px-12
              min-[769px]:m-24 min-[769px]:p-0
@@ -19,89 +19,86 @@
              min-[1153px]:mb-24 min-[1153px]:ml-64 min-[1153px]:mr-auto min-[1153px]:mt-24
              print:m-0 print:p-4"
     >
-      <div class="flex flex-col items-start gap-6 min-[481px]:flex-row min-[481px]:items-center min-[481px]:gap-8">
-        <div class="headpat" id="headpat">
-          <div class="headpat__fill"></div>
-          <div class="headpat__code" id="headpat-code">L13E</div>
-          <img class="headpat__body" src="/head-hole.png" alt="A hand headpatting Dhika" />
+      <header class="flex flex-col gap-6">
+        <p class="rise m-0 text-[22px] font-semibold leading-none text-[#52504c] dark:text-[#b5b2ac]">
+          Hai There! I&rsquo;m
+        </p>
+        <div class="rise rise-2 flex flex-wrap items-center gap-6">
+          <div class="headpat [--w:96px] min-[481px]:[--w:120px] min-[769px]:[--w:160px]" id="headpat">
+            <div class="headpat__fill"></div>
+            <div class="headpat__code" id="headpat-code">L13E</div>
+            <img class="headpat__body" src="/head-hole.png" alt="A hand headpatting Dhika" />
+          </div>
+          <h1 class="display-name name-alt m-0">Dhika Rizky</h1>
         </div>
-        <div class="flex flex-col gap-3">
-          <p class="m-0 text-[18px] leading-[22px] text-muted dark:text-muted-dark">
-            Hai There! I&rsquo;m
-          </p>
-          <h1 class="name-alt m-0 text-[48px] font-bold leading-none text-ink dark:text-ink-dark">
-            Dhika Rizky
-          </h1>
-          <a
-            href="mailto:dhika@dhikarizky.me"
-            class="text-[15px] text-muted underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:text-muted-dark dark:hover:text-ink-dark"
-          >
-            dhika@dhikarizky.me
-          </a>
-        </div>
-      </div>
+        <a
+          href="mailto:dhika@dhikarizky.me"
+          class="rise rise-3 self-start text-[15px]"
+        >
+          dhika@dhikarizky.me
+        </a>
+        <div class="rise rise-3 hero-rule" aria-hidden="true"></div>
+      </header>
 
-      <section class="flex flex-col gap-4 text-[16px] leading-relaxed text-muted dark:text-muted-dark">
+      <section class="rise rise-4 flex flex-col">
+        <h2 class="section-head"><span class="section-head__num">01</span> About</h2>
+        <div class="flex flex-col gap-5 text-[17px] leading-[1.7] text-[#52504c] dark:text-[#b5b2ac]">
         <p>
           I&rsquo;m a weeb that tried to make taking transit easier with
-          <a href="#commute" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">Commute</a>,
+          <a href="#commute">Commute</a>,
           shopping business needs manageable with
-          <a href="https://mbizmarket.co.id" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">Mbizmarket</a>,
+          <a href="https://mbizmarket.co.id" target="_blank" rel="noreferrer noopener">Mbizmarket</a>,
           buying your loved ones&rsquo; birthday cake seamlessly with
-          <a href="https://harvestcakes.com" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">The Harvest</a>,
-          <button
-            type="button"
+          <a href="https://harvestcakes.com" target="_blank" rel="noreferrer noopener">The Harvest</a>,
+          <span
+            role="button"
+            tabindex="0"
             id="tagalog-toggle"
             aria-label="Tagalog phrase, tap to translate to English"
-            class="cursor-pointer underline decoration-dotted decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark"
+            class="cursor-pointer underline decoration-dotted decoration-1 underline-offset-2 transition-colors hover:text-[#141414] dark:hover:text-[#eceae6]"
             lang="tl"
-          >i-tap lang ang pagkain at mga pang-araw-araw mong pangangailangan gamit ang</button>
-          <a href="https://pickaroo.com" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">PICK&#8226;A&#8226;ROO</a>,
+          >i-tap lang ang pagkain at mga pang-araw-araw mong pangangailangan gamit ang</span>
+          <a href="https://pickaroo.com" target="_blank" rel="noreferrer noopener">PICK&#8226;A&#8226;ROO</a>,
           and completing your waifus and husbandos altars anywhere with
-          <a href="https://kyou.id" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">Kyou Hobby Shop</a>.
+          <a href="https://kyou.id" target="_blank" rel="noreferrer noopener">Kyou Hobby Shop</a>.
         </p>
         <p>
           When not tinkering, I complaint about Jakarta&rsquo;s public transit at
-          <a href="https://x.com/dukuhatas2" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">@dukuhatas2</a>
+          <a href="https://x.com/dukuhatas2" target="_blank" rel="noreferrer noopener">@dukuhatas2</a>
           and meme&rsquo;d it at
-          <a href="https://x.com/shitpostrans" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">@shitpostrans</a>,
+          <a href="https://x.com/shitpostrans" target="_blank" rel="noreferrer noopener">@shitpostrans</a>,
           watch
-          <a href="https://myanimelist.net/anime/50416/" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">Skip and Loafer</a>
+          <a href="https://myanimelist.net/anime/50416/" target="_blank" rel="noreferrer noopener">Skip and Loafer</a>
           and
-          <a href="https://myanimelist.net/anime/35839/" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">A Place Further Than the Universe</a>,
+          <a href="https://myanimelist.net/anime/35839/" target="_blank" rel="noreferrer noopener">A Place Further Than the Universe</a>,
           and looking at my Shima + Mitsumi figures, alongside Chisato and
           Shigure Ui figures too.
         </p>
-        <p>
-          Looking for the formal version?
-          <a href="/resume" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">Here&rsquo;s my resume</a>.
-        </p>
+        </div>
       </section>
 
-      <section id="commute" class="flex flex-col">
-        <h2 class="section-title">
-          <img src="/commute-logotype.svg" alt="Commute" class="h-6 w-auto" />
-        </h2>
-        <div class="flex flex-col gap-4 text-[16px] leading-relaxed text-muted dark:text-muted-dark">
+      <section id="commute" class="rise rise-5 flex flex-col">
+        <h2 class="section-head"><span class="section-head__num">02</span> Commute</h2>
+        <img src="/commute-logotype.svg" alt="" class="mb-5 h-9 w-auto self-start" />
+        <div class="flex flex-col gap-5 text-[17px] leading-[1.7] text-[#52504c] dark:text-[#b5b2ac]">
           <p>
-            <a href="https://commute.shiorilabs.id" target="_blank" rel="noreferrer noopener" class="underline decoration-1 underline-offset-2 transition-colors hover:text-ink dark:hover:text-ink-dark">Commute</a>
+            <a href="https://commute.shiorilabs.id" target="_blank" rel="noreferrer noopener">Commute</a>
             is my attempt at making Jakarta&rsquo;s rail network feel like one
-            system. It pulls the four operators &mdash; KAI Commuter, MRT
-            Jakarta, LRT Jakarta, and LRT Jabodebek &mdash; into a single app
-            for station search, live timetables, lines, and interchange hubs,
-            instead of four separate ones.
+            system. It pulls the four operators (KAI Commuter, MRT Jakarta,
+            LRT Jakarta, and LRT Jabodebek) into a single app for station
+            search, live timetables, lines, and interchange hubs, instead of
+            four separate ones.
           </p>
           <p>
-            Under the hood there&rsquo;s an interactive WebGL map built from
-            vector tiles generated off Transport for Jakarta&rsquo;s (FDTJ)
-            integration map, and a line-topology model that untangles trunk and
-            branch routing. It&rsquo;s an installable PWA with offline data
-            caching, running on Cloudflare Workers and D1 at the edge, with a
-            scraping pipeline that keeps schedules current.
+            Under the hood there&rsquo;s a
+            line-topology model that untangles trunk and branch routing.
+            It&rsquo;s an installable PWA with offline data caching, running on
+            Cloudflare Workers and D1 at the edge, with a scraping pipeline
+            that keeps schedules current.
           </p>
           <p>
             <em>The line data powering the avatar up top comes straight from
-            this project &mdash; try clicking it!</em>
+            this project, try clicking it!</em>
           </p>
         </div>
       </section>
@@ -117,9 +114,11 @@
         headpat.style.setProperty('--line-color', line.color)
         headpat.style.setProperty('--line-text', textColor(line.color))
         codeEl.textContent = line.code
-        // Share the active line color page-wide so the timeline accent follows it.
-        // The rail is nudged for legibility against the current theme's background.
+        // Share the active line color page-wide so the hero rule, ::selection,
+        // and link-hover accents follow it. The rail is nudged for legibility
+        // against the current theme's background.
         root.style.setProperty('--line-color', line.color)
+        root.style.setProperty('--line-text', textColor(line.color))
         root.style.setProperty('--rail-color', railColor(line.color, darkQuery.matches))
       }
 
@@ -157,10 +156,19 @@
         en: 'one-tap your food and daily needs with',
       }
       let phraseLang = 'tl'
-      tagalog.addEventListener('click', () => {
+      function togglePhrase() {
         phraseLang = phraseLang === 'tl' ? 'en' : 'tl'
         tagalog.textContent = phrases[phraseLang]
         tagalog.setAttribute('lang', phraseLang)
+      }
+      tagalog.addEventListener('click', togglePhrase)
+      // The toggle is a span (a button wouldn't line-wrap with the prose),
+      // so Enter/Space activation is wired up manually.
+      tagalog.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          togglePhrase()
+        }
       })
     </script>
   </body>

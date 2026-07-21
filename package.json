@@ -3,24 +3,18 @@
   "version": "2.0.0",
   "description": "This site can be accessed in https://dhikarizky.me",
   "scripts": {
-    "clean": "rm -rf dist",
-    "copy": "mkdir -p dist/fonts dist/resume && cp index.html 404.html favicon.png head-hole.png commute-logotype.svg lines.js _headers _redirects dist/ && cp resume/index.html dist/resume/ && cp public/fonts/* dist/fonts/",
-    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
-    "build": "pnpm run clean && pnpm run copy && pnpm run build:css",
-    "dev:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "dev:static": "chokidar \"index.html\" \"resume/index.html\" \"404.html\" \"lines.js\" \"favicon.png\" \"head-hole.png\" \"commute-logotype.svg\" \"_headers\" \"_redirects\" -c \"pnpm run copy\" --initial",
-    "dev:serve": "sirv dist --dev --port 3000",
-    "dev": "concurrently -k -n css,static,serve -c cyan,magenta,green \"pnpm:dev:css\" \"pnpm:dev:static\" \"pnpm:dev:serve\""
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 3000"
   },
   "author": "Dhika Rizky (deka_r@outlook.com)",
   "license": "MIT",
   "packageManager": "pnpm@11.1.1",
   "devDependencies": {
-    "chokidar-cli": "^3.0.0",
-    "concurrently": "^10.0.3",
+    "@tailwindcss/vite": "^4.0.0",
     "sharp": "^0.35.3",
-    "sirv-cli": "^3.0.1",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^4.0.0",
+    "vite": "^6.0.0"
   },
   "repository": {
     "type": "git",

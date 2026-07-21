@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="/favicon.png" />
     <title>Dhika Rizky</title>
     <meta name="description" content="Hai, I'm Dhika Rizky" />
-    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/src/input.css" />
   </head>
   <body class="home">
     <div
@@ -27,7 +27,7 @@
           <div class="headpat [--w:96px] min-[481px]:[--w:120px] min-[769px]:[--w:160px]" id="headpat">
             <div class="headpat__fill"></div>
             <div class="headpat__code" id="headpat-code">L13E</div>
-            <img class="headpat__body" src="/head-hole.png" alt="A hand headpatting Dhika" />
+            <img class="headpat__body" src="./src/assets/head-hole.png" alt="A hand headpatting Dhika" />
           </div>
           <h1 class="display-name name-alt m-0">Dhika Rizky</h1>
         </div>
@@ -79,7 +79,7 @@
 
       <section id="commute" class="rise rise-5 flex flex-col">
         <h2 class="section-head"><span class="section-head__num">02</span> Commute</h2>
-        <img src="/commute-logotype.svg" alt="" class="mb-5 h-9 w-auto self-start" />
+        <img src="./src/assets/commute-logotype.svg" alt="" class="mb-5 h-9 w-auto self-start" />
         <div class="flex flex-col gap-5 text-[17px] leading-[1.7] text-[#52504c] dark:text-[#b5b2ac]">
           <p>
             <a href="https://commute.shiorilabs.id" target="_blank" rel="noreferrer noopener">Commute</a>
@@ -103,73 +103,6 @@
         </div>
       </section>
     </div>
-    <script type="module">
-      import { pickRandom, textColor, railColor } from '/lines.js'
-      const headpat = document.getElementById('headpat')
-      const codeEl = document.getElementById('headpat-code')
-      const root = document.documentElement
-      const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
-
-      function apply(line) {
-        headpat.style.setProperty('--line-color', line.color)
-        headpat.style.setProperty('--line-text', textColor(line.color))
-        codeEl.textContent = line.code
-        // Share the active line color page-wide so the hero rule, ::selection,
-        // and link-hover accents follow it. The rail is nudged for legibility
-        // against the current theme's background.
-        root.style.setProperty('--line-color', line.color)
-        root.style.setProperty('--line-text', textColor(line.color))
-        root.style.setProperty('--rail-color', railColor(line.color, darkQuery.matches))
-      }
-
-      // Random line on load (applied instantly, no fade on first paint).
-      let current = pickRandom()
-      apply(current)
-
-      // Re-tune the rail color if the OS theme flips while the page is open.
-      darkQuery.addEventListener('change', () => apply(current))
-
-      // Click to re-roll a different line, crossfading: fade the code out, swap
-      // color + text while it's invisible (the fill's background-color transition
-      // runs concurrently), then fade back in.
-      let swapping = false
-      headpat.addEventListener('click', () => {
-        if (swapping) return
-        swapping = true
-        let next = pickRandom()
-        while (next.code === current.code) next = pickRandom()
-        current = next
-
-        headpat.classList.add('is-swapping')
-        window.setTimeout(() => {
-          apply(current)
-          headpat.classList.remove('is-swapping')
-          swapping = false
-        }, 160)
-      })
-
-      // Pickaroo easter egg: the phrase starts in Tagalog, tapping it flips
-      // between Tagalog and English.
-      const tagalog = document.getElementById('tagalog-toggle')
-      const phrases = {
-        tl: 'i-tap lang ang pagkain at mga pang-araw-araw mong pangangailangan gamit ang',
-        en: 'one-tap your food and daily needs with',
-      }
-      let phraseLang = 'tl'
-      function togglePhrase() {
-        phraseLang = phraseLang === 'tl' ? 'en' : 'tl'
-        tagalog.textContent = phrases[phraseLang]
-        tagalog.setAttribute('lang', phraseLang)
-      }
-      tagalog.addEventListener('click', togglePhrase)
-      // The toggle is a span (a button wouldn't line-wrap with the prose),
-      // so Enter/Space activation is wired up manually.
-      tagalog.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault()
-          togglePhrase()
-        }
-      })
-    </script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,15 @@
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+# Vite fingerprints everything under /assets/ (CSS, JS, fonts, images) with a
+# content hash, so these are immutable — the URL changes when the content does.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Unhashed (stable URL), so cache modestly.
+/favicon.png
+  Cache-Control: public, max-age=86400
+
+# Baseline security headers for all responses.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

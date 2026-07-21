@@ -3,7 +3,7 @@
 // show through from behind. Run once when the source art changes:
 //   node scripts/knockout-blob.mjs
 //
-// Output: head-hole.png (repo root), copied into dist/ by the build.
+// Output: src/assets/head-hole.png, fingerprinted into dist/assets/ by Vite.
 
 import sharp from 'sharp'
 import { fileURLToPath } from 'node:url'
@@ -11,7 +11,7 @@ import { dirname, join } from 'node:path'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const SRC = join(root, 'stevemc4.png')
-const OUT = join(root, 'head-hole.png')
+const OUT = join(root, 'src/assets/head-hole.png')
 
 // Seed for the flood fill: inside the purple blob, below the white text.
 const SEED = { x: 741, y: 600 }
